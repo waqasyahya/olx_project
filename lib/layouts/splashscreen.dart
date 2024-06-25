@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     _controller.addListener(() {
       if (_animation.value == 1) {
         // Navigate to the next screen after the animation completes
-        Future.delayed(Duration(seconds: 3)).then((_) {
+        Future.delayed(Duration(seconds: 5)).then((_) {
           try {
             Get.offAllNamed(AppRoutes.HOME);
           } catch (e) {
@@ -58,7 +58,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                   radius: 75,
                 ),
                 CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/olxlogo.png'), // Path to your logo image
+                  backgroundImage: AssetImage('assets/images/olximage.png'), // Path to your logo image
                   radius: 75,
                 ),
               ],
@@ -71,7 +71,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
               builder: (context, child) {
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(5, (index) {
+                  children: List.generate(3, (index) {
                     return Container(
                       margin: EdgeInsets.symmetric(horizontal: 5),
                       height: 12, // Increase the height of the dots

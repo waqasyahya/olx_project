@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../Routes/Route.dart';
+import '../screens/Home.dart';
 import '../screens/SellPage.dart';
 import 'ThreeColorCircle.dart'; // Add this line
 
@@ -34,19 +35,12 @@ class BottomNavigationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
           () => Scaffold(
-        appBar: AppBar(
-          title: Text(
-            _getTitle(BottomNavigationPageController.to.currentIndex.value),
-            style: TextStyle(color: Colors.black),
-          ),
-          backgroundColor: Colors.white,
-          elevation: 0,
-        ),
+
         body: IndexedStack(
           index: BottomNavigationPageController.to.currentIndex.value,
           children: [
             // Add your pages here
-            // HomeView(),
+            homepage(),
             // SettingPage(),
             // AudioPlayerScreen(),
             // SearchPage(),
@@ -55,76 +49,71 @@ class BottomNavigationPage extends StatelessWidget {
         ),
         bottomNavigationBar: Container(
           height: 75,
-          // Fix the height of the bottom navigation bar
-          decoration: BoxDecoration(
-            color: Colors.grey, // Add a background color
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(50), // Add a radius to the top left corner
-              topRight: Radius.circular(50), // Add a radius to the top right corner
-            ),
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(50), // Add a radius to the top left corner
-              topRight: Radius.circular(50), // Add a radius to the top right corner
-            ),
-            child: Stack(
-              children: [
-                BottomNavigationBar(
-                  type: BottomNavigationBarType.fixed, // Add this line
-                  currentIndex: BottomNavigationPageController.to.currentIndex.value,
-                  onTap: BottomNavigationPageController.to.changePage,
-                  selectedItemColor: Colors.black,
-                  unselectedItemColor: Colors.black,
-                  items: [
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.home, color: Colors.black, size: 20), // Reduce the icon size
-                      label: 'HOME',
-                    ),
-                    BottomNavigationBarItem(
-                      icon: ClipOval(
-                        child: Icon(Icons.chat_bubble_outline_rounded, color: Colors.black, size: 20),
-                      ),
-                      label: 'CHATS',
-                    ),
-                    BottomNavigationBarItem(
-                      icon: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Transform.translate(
-                            offset: Offset(1, -5), // Adjust the y-offset to fit the height
-                            child: CustomPaint(
-                              size: Size(26, 26), // Increase the size of the custom paint
-                              painter: ThreeColorCirclePainter(),
-                            ),
-                          ),
-                          Text('Sell', style: TextStyle(fontSize: 10)), // Increase the font size
-                        ],
-                      ),
-                      label: '', // Remove the label here
-                    ),
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.search, color: Colors.black, size: 20), // Reduce the icon size
-                      label: 'Search',
-                    ),
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.person, color: Colors.black, size: 20), // Reduce the icon size
-                      label: 'Profile',
-                    ),
-                  ],
-                ),
-                if (BottomNavigationPageController.to.currentIndex.value != 2)
-                  Positioned(
-                    top: 0,
-                    left: _getLeftPosition(context, BottomNavigationPageController.to.currentIndex.value),
-                    child: Container(
-                      height: 3,
-                      width: 60, // Adjust the width of the line as needed
-                      color: Colors.purple,
-                    ),
+
+          child: Stack(
+            children: [
+              BottomNavigationBar(
+                type: BottomNavigationBarType.fixed, // Add this line
+                currentIndex: BottomNavigationPageController.to.currentIndex.value,
+                onTap: BottomNavigationPageController.to.changePage,
+                selectedItemColor: Colors.black,
+                unselectedItemColor: Colors.black,
+                items: [
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.home, color: Colors.black, size: 20), // Reduce the icon size
+                    label: 'HOME',
                   ),
-              ],
-            ),
+                  BottomNavigationBarItem(
+                    icon: ClipOval(
+                      child: Icon(Icons.chat_bubble_outline_rounded, color: Colors.black, size: 20),
+                    ),
+                    label: 'CHATS',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Transform.translate(
+                          offset: Offset(1, -20), // Adjust the y-offset to fit the height
+                          child: CustomPaint(
+                            size: Size(26, 26), // Increase the size of the custom paint
+                            painter: ThreeColorCirclePainter(),
+                          ),
+                        ),
+                        Text('Sell', style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold)), // Increase the font size
+                      ],
+                    ),
+                    label: '', // Remove the label here
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Stack(
+                      children: [
+                        Icon(Icons.rectangle_outlined, size: 15), // first icon
+                        Positioned(
+                          bottom: 5, // position the second icon below the first one
+                          child: Icon(Icons.rectangle_outlined, size: 15), // second icon
+                        ),
+                      ],
+                    ),
+                    label: 'My Ads',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.person, color: Colors.black, size: 20), // Reduce the icon size
+                    label: 'Account',
+                  ),
+                ],
+              ),
+              if (BottomNavigationPageController.to.currentIndex.value != 2)
+                Positioned(
+                  top: 0,
+                  left: _getLeftPosition(context, BottomNavigationPageController.to.currentIndex.value),
+                  child: Container(
+                    height: 3,
+                    width: 60, // Adjust the width of the line as needed
+                    color: Colors.purple,
+                  ),
+                ),
+            ],
           ),
         ),
       ),

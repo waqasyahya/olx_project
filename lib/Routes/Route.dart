@@ -3,6 +3,7 @@
 import 'package:get/get.dart';
 
 import '../layouts/splashscreen.dart';
+import '../screens/Home.dart';
 // import '../screen/about.dart';
 // import '../screen/home.dart';
 // import '../screen/setting.dart';
@@ -18,7 +19,7 @@ class AppRoutes {
   static const VideoScreen = '/VideoScreen';
 
   static List<GetPage> routes = <GetPage>[
-    // GetPage(name: HOME, page: () => HomeView()),
+    GetPage(name: HOME, page: () => homepage()),
     // GetPage(name: setting, page: () => settindpage()),
     GetPage(name: splash, page: () => SplashScreen()),
     // GetPage(name: profilepage, page: () => AudioPlayerScreen()),
