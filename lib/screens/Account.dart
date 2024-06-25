@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class homepage extends StatelessWidget {
-  const homepage({super.key});
+class accountpage extends StatelessWidget {
+  const accountpage({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         leading: Image.asset('assets/images/olximage.png'), // logo on the left side
@@ -21,7 +20,7 @@ class homepage extends StatelessWidget {
               ),
               child: Icon(Icons.car_repair_outlined), // icon inside the button
               onPressed: () {
-
+                // handle button press here
                 print('Button pressed');
               },
             ),
@@ -56,7 +55,7 @@ class homepage extends StatelessWidget {
         ],
       ),
       body: Container(
-        child: Text('this is home page'),
+        child: Text('this is account page'),
       ),
     );
   }

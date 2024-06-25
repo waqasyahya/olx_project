@@ -8,7 +8,9 @@ import 'layouts/splashscreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await GetStorage.init(); // Initialize GetStorage
+  await GetStorage.init();
+  // AppRoutes.routes;
+  // Initialize GetStorage
   runApp(MyApp());
 }
 

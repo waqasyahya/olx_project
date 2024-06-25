@@ -3,26 +3,23 @@
 import 'package:get/get.dart';
 
 import '../layouts/splashscreen.dart';
+import '../screens/Account.dart';
+import '../screens/Ads.dart';
 import '../screens/Home.dart';
-// import '../screen/about.dart';
-// import '../screen/home.dart';
-// import '../screen/setting.dart';
-// import '../screen/splashscreen.dart';
-// import '../screen/profile.dart';
+import '../screens/chats.dart';
 
 class AppRoutes {
   static const HOME = '/home';
-  static const setting = '/setting';
-  static const profilepage = '/profilepage';
+  static const account = '/account';
+  static const ads = '/ads';
   static const splash = '/SplashScreen';
-
-  static const VideoScreen = '/VideoScreen';
+  static const chat = '/chat';
 
   static List<GetPage> routes = <GetPage>[
     GetPage(name: HOME, page: () => homepage()),
-    // GetPage(name: setting, page: () => settindpage()),
+    GetPage(name: account, page: () => accountpage()),
     GetPage(name: splash, page: () => SplashScreen()),
-    // GetPage(name: profilepage, page: () => AudioPlayerScreen()),
-    // GetPage(name: VideoScreen, page: () => VideoPlayerScreen()),
+    GetPage(name: ads, page: () => adspage()),
+    GetPage(name: chat, page: () => chatpage()),
   ];
 }
