@@ -6,7 +6,9 @@ import '../layouts/splashscreen.dart';
 import '../screens/Account.dart';
 import '../screens/Ads.dart';
 import '../screens/Home.dart';
+import '../screens/Moters.dart';
 import '../screens/chats.dart';
+import '../screens/property.dart';
 
 class AppRoutes {
   static const HOME = '/home';
@@ -14,6 +16,8 @@ class AppRoutes {
   static const ads = '/ads';
   static const splash = '/SplashScreen';
   static const chat = '/chat';
+  static const property = '/property';
+  static const moters = '/moters';
 
   static List<GetPage> routes = <GetPage>[
     GetPage(name: HOME, page: () => homepage()),
@@ -21,5 +25,7 @@ class AppRoutes {
     GetPage(name: splash, page: () => SplashScreen()),
     GetPage(name: ads, page: () => adspage()),
     GetPage(name: chat, page: () => chatpage()),
+    GetPage(name: property, page: () => propertypage()),
+    GetPage(name: moters, page: () => Moterpage()),
   ];
 }

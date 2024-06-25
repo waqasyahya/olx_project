@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:olx_project/screens/property.dart';
+
+import 'Moters.dart';
+
+
+
+
 
 class homepage extends StatelessWidget {
-  const homepage({super.key});
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         leading: Image.asset('assets/images/olximage.png'), // logo on the left side
@@ -21,7 +26,7 @@ class homepage extends StatelessWidget {
               ),
               child: Icon(Icons.car_repair_outlined), // icon inside the button
               onPressed: () {
-
+                Get.to(() => Moterpage());
                 print('Button pressed');
               },
             ),
@@ -42,7 +47,7 @@ class homepage extends StatelessWidget {
                 ),
                 child: Icon(Icons.home_work), // icon inside the button
                 onPressed: () {
-                  // handle button press here
+                  Get.to(() => propertypage());
                   print('Button pressed');
                 },
               ),
@@ -55,8 +60,175 @@ class homepage extends StatelessWidget {
           )
         ],
       ),
-      body: Container(
-        child: Text('this is home page'),
+      body: ListView(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(Icons.location_on_outlined, size: 30),
+                        SizedBox(width: 8),
+                        Text('Township Block II,Lahore...', style: TextStyle(fontSize: 22)),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 12),
+                      child: Icon(Icons.notifications_none, size: 30),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(11),
+                      child: Container(
+                        width: 350,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          border: Border.all(width: 1.0),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: Row(
+                          children: <Widget>[
+                            Icon(Icons.search),
+                            Expanded(
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  hintText: 'What are you looking for?',
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 12),
+                  child: Container(
+                    child: Image.asset('assets/images/download.png'),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 16),
+                  child: Container(
+                    child: Image(
+                      image: AssetImage('assets/images/download (1).png'),
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Browse categories', style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold)),
+                      Text('See All', style: TextStyle(color: Colors.blueAccent, fontSize: 20)),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 200,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Column(
+                          children: [
+                            Container(
+                              width: 50,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image: AssetImage('assets/images/download.png'),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            Text('Image 1'),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Container(
+                              width: 50,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image: AssetImage('assets/images/download.png'),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            Text('Image 2'),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Container(
+                              width: 50,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image: AssetImage('assets/images/download.png'),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            Text('Image 3'),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Container(
+                              width: 50,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image: AssetImage('assets/images/download.png'),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            Text('Image 4'),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Container(
+                              width: 50,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image: AssetImage('assets/images/download.png'),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            Text('Image 5'),
+                          ],
+                        ),
+                      ],
+                    )
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

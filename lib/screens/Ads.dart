@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:olx_project/screens/property.dart';
+
+import 'Moters.dart';
 
 class adspage extends StatelessWidget {
   const adspage({super.key});
@@ -20,7 +23,7 @@ class adspage extends StatelessWidget {
               ),
               child: Icon(Icons.car_repair_outlined), // icon inside the button
               onPressed: () {
-                // handle button press here
+                Get.to(() => Moterpage());
                 print('Button pressed');
               },
             ),
@@ -41,7 +44,7 @@ class adspage extends StatelessWidget {
                 ),
                 child: Icon(Icons.home_work), // icon inside the button
                 onPressed: () {
-                  // handle button press here
+                  Get.to(() => propertypage());
                   print('Button pressed');
                 },
               ),
