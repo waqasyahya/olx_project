@@ -51,9 +51,17 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircleAvatar(
-              backgroundImage: AssetImage('assets/images/olxlogo.png'), // Path to your logo image
-              radius: 75,
+            Stack(
+              children: <Widget>[
+                CircleAvatar(
+                  backgroundColor: Color(0xFF165358), // Set the background color
+                  radius: 75,
+                ),
+                CircleAvatar(
+                  backgroundImage: AssetImage('assets/images/olxlogo.png'), // Path to your logo image
+                  radius: 75,
+                ),
+              ],
             ), // Replace with your logo
             SizedBox(height: 20),
 
