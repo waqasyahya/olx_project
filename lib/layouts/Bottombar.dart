@@ -52,7 +52,7 @@ class BottomNavigationPage extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: Container(
-          height: 75,
+          height: 62,
           child: Stack(
             children: [
               BottomNavigationBar(
@@ -72,18 +72,23 @@ class BottomNavigationPage extends StatelessWidget {
                     ),
                     label: 'CHATS',
                   ),
+
                   BottomNavigationBarItem(
+
                     icon: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Transform.translate(
                           offset: Offset(1, -20),
                           child: CustomPaint(
-                            size: Size(26, 26),
+                            size: Size(28, 27),
                             painter: ThreeColorCirclePainter(),
                           ),
                         ),
-                        Text('Sell', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
+                        // Padding(
+                        //   padding: const EdgeInsets.only(top: 1),
+                        //   child: Text('Sell', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold)),
+                        // ),
                       ],
                     ),
                     label: '',

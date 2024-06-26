@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import '../layouts/splashscreen.dart';
 import '../screens/Account.dart';
 import '../screens/Ads.dart';
+import '../screens/Cars.dart';
 import '../screens/Home.dart';
 import '../screens/Moters.dart';
 import '../screens/chats.dart';
@@ -18,6 +19,8 @@ class AppRoutes {
   static const chat = '/chat';
   static const property = '/property';
   static const moters = '/moters';
+  static const Car = '/Carspage';
+
 
   static List<GetPage> routes = <GetPage>[
     GetPage(name: HOME, page: () => homepage()),
@@ -27,5 +30,6 @@ class AppRoutes {
     GetPage(name: chat, page: () => chatpage()),
     GetPage(name: property, page: () => propertypage()),
     GetPage(name: moters, page: () => Moterpage()),
+    GetPage(name: Car, page: () => Carspage()),
   ];
 }
