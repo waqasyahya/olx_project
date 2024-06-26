@@ -24,6 +24,7 @@ class homepage extends StatelessWidget {
             title: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     shape: CircleBorder(),
@@ -35,9 +36,9 @@ class homepage extends StatelessWidget {
                     print('Button pressed');
                   },
                 ),
-                SizedBox(width: 8), // some space between button and text
+                SizedBox(width: 2), // some space between button and text
                 Padding(
-                  padding: const EdgeInsets.only( right: 15.0),
+                  padding: const EdgeInsets.only( right: 23.0),
                   child: Text('Moters',style: TextStyle(fontSize: 20),),
                 ), // text outside the button
               ],
@@ -48,7 +49,7 @@ class homepage extends StatelessWidget {
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       shape: CircleBorder(),
-                      padding: EdgeInsets.only(left: 10, right: 10),
+                      padding: EdgeInsets.only(left: 20, right: 20),
                     ),
                     child: Icon(Icons.home_work), // icon inside the button
                     onPressed: () {
@@ -56,7 +57,7 @@ class homepage extends StatelessWidget {
                       print('Button pressed');
                     },
                   ),
-                  SizedBox(width: 8), // some space between button and text
+                  SizedBox(width: 2), // some space between button and text
                   Padding(
                     padding: const EdgeInsets.only(left: 1, right: 20),
                     child: Text('Property', style: TextStyle(fontSize: 20)),
@@ -88,38 +89,44 @@ class homepage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10),
-                            child: Container(
-                              // width: MediaQuery.of(context).size.width - MediaQuery.of(context).padding.right ,
-                              height: 50,
-width: 370,
-                              decoration: BoxDecoration(
-                                border: Border.all(width: 1.0),
-                                borderRadius: BorderRadius.circular(4),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          width: Get.width, // Fit the screen width
+                          height: 50, // Adjust the height as needed
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                spreadRadius: 1,
+                                blurRadius: 5,
                               ),
-                              child: Row(
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 20.0, right: 20.0), // Adjust paddings as needed
-                                    child: Icon(Icons.search),
-                                  ),
-                                  Expanded(
-                                    child: TextField(
-                                      decoration: InputDecoration(
-                                        border: InputBorder.none,
-                                        hintText: 'What are you looking for?',
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                            ],
+                          ),
+                          child: Row(
+                            children: [
+                              IconButton(
+                                icon: Icon(Icons.search),
+                                onPressed: () {
+                                  // Handle search icon press
+                                },
                               ),
-                            ),
-                          )
-
-                        ],
+                              Expanded(
+                                child: TextField(
+                                  // controller: _searchController,
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    hintText: 'Search...',
+                                    hintStyle: TextStyle(color: Colors.grey),
+                                  ),
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 5),
