@@ -553,9 +553,9 @@ class homepage extends StatelessWidget {
                         height: 240,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
-                          itemCount: jobitems.length,
+                          itemCount: jobItems.length,
                           itemBuilder: (context, index) {
-                            final item = jobitems[index];
+                            final item = jobItems[index];
                             return Padding(
                               padding: EdgeInsets.only(right: 16), // Space between cards
                               child: Card(

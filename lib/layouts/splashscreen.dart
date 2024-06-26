@@ -77,7 +77,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                       height: 12, // Increase the height of the dots
                       width: 12, // Make the dots' size equal
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.white.withOpacity(_animation.value), // Animate the opacity of the dots
                         borderRadius: BorderRadius.circular(6), // Increase the border radius to match the height
                       ),
                     );

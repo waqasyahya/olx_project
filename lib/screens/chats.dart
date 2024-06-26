@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:olx_project/screens/property.dart';
 
-import 'Moters.dart';
-import 'Jobs.dart';
+import '../Models/card.dart';
 
 class chatpage extends StatefulWidget {
   @override
@@ -12,16 +9,16 @@ class chatpage extends StatefulWidget {
 
 class _ChatPageState extends State<chatpage> {
   int _currentIndex = 0;
-  List<String> _allData = ['1 1', '1 2', '1 3', '1 4', '1 5'];
-  List<String> _buyingData = ['2 1', '2 2'];
-  List<String> _sellingData = ['3 1', '3 2', '3 3', '3 4', '3 5'];
-  List<String> _data = [];
+  // List<String> _allData=[];
+  // List<String> _buyingData = [ ];
+  // List<String> _sellingData = [ ];
+  // List<String> _data = [];
   final PageController _chatPageController = PageController();
 
   @override
   void initState() {
     super.initState();
-    _data = _allData;
+    var data = allData.cast<String>();
   }
 
   @override
@@ -48,7 +45,7 @@ class _ChatPageState extends State<chatpage> {
                       onTap: () {
                         setState(() {
                           _currentIndex = 0;
-                          _data = _allData;
+                          var data = allData.cast<String>();
                           _chatPageController.jumpToPage(0);
                         });
                       },
@@ -58,7 +55,7 @@ class _ChatPageState extends State<chatpage> {
                       onTap: () {
                         setState(() {
                           _currentIndex = 1;
-                          _data = _buyingData;
+                          var data = buyingData.cast<String>();
                           _chatPageController.jumpToPage(1);
                         });
                       },
@@ -68,7 +65,7 @@ class _ChatPageState extends State<chatpage> {
                       onTap: () {
                         setState(() {
                           _currentIndex = 2;
-                          _data = _sellingData;
+                          var data = sellingData.cast<String>();
                           _chatPageController.jumpToPage(2);
                         });
                       },
@@ -79,7 +76,8 @@ class _ChatPageState extends State<chatpage> {
               ),
               Container(
                 height: 2,
-                color: Colors.blue,
+
+                color: Colors.yellowAccent,
                 margin: EdgeInsets.only(top: 10),
                 child: Row(
                   children: [
@@ -88,7 +86,8 @@ class _ChatPageState extends State<chatpage> {
                       child: _currentIndex == 0
                           ? Container(
                         height: 2,
-                        color: Colors.blue,
+                        width: 100,
+                        color: Colors.red,
                       )
                           : Container(),
                     ),
@@ -97,7 +96,8 @@ class _ChatPageState extends State<chatpage> {
                       child: _currentIndex == 1
                           ? Container(
                         height: 2,
-                        color: Colors.blue,
+                        width: 100,
+                        color: Colors.black,
                       )
                           : Container(),
                     ),
@@ -106,7 +106,8 @@ class _ChatPageState extends State<chatpage> {
                       child: _currentIndex == 2
                           ? Container(
                         height: 2,
-                        color: Colors.blue,
+                        width: 100,
+                        color: Colors.green,
                       )
                           : Container(),
                     ),
@@ -117,35 +118,69 @@ class _ChatPageState extends State<chatpage> {
                 height: 300,
                 child: PageView(
                   controller: _chatPageController,
+                  physics: AlwaysScrollableScrollPhysics(),
                   onPageChanged: (index) {
                     setState(() {
                       _currentIndex = index;
                       if (index == 0) {
-                        _data = _allData;
+                        var data = allData.cast<String>();
                       } else if (index == 1) {
-                        _data = _buyingData;
+                        var data = buyingData.cast<String>();
                       } else {
-                        _data = _sellingData;
+                        var data = sellingData.cast<String>();
                       }
                     });
                   },
                   children: [
                     ListView.builder(
-                      itemCount: _allData.length,
+                      itemCount: allData.length,
                       itemBuilder: (context, index) {
-                        return ListTile(title: Text(_allData[index]));
+                        return Stack(
+                          children: [
+                            if (allData[index].isImage)
+                              Image.asset(allData[index].imageUrl),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: ListTile(
+                                title: Text(allData[index].text, style: TextStyle(color: Colors.black)),
+                              ),
+                            ),
+                          ],
+                        );
                       },
                     ),
                     ListView.builder(
-                      itemCount: _buyingData.length,
+                      itemCount: buyingData.length,
                       itemBuilder: (context, index) {
-                        return ListTile(title: Text(_buyingData[index]));
+                        return Stack(
+                          children: [
+                            if (buyingData[index].isImage)
+                              Image.asset(buyingData[index].imageUrl),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: ListTile(
+                                title: Text(buyingData[index].text, style: TextStyle(color: Colors.black)),
+                              ),
+                            ),
+                          ],
+                        );
                       },
                     ),
                     ListView.builder(
-                      itemCount: _sellingData.length,
+                      itemCount: buyingData.length,
                       itemBuilder: (context, index) {
-                        return ListTile(title: Text(_sellingData[index]));
+                        return Stack(
+                          children: [
+                            if (sellingData[index].isImage)
+                              Image.asset(sellingData[index].imageUrl),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: ListTile(
+                                title: Text(sellingData[index].text, style: TextStyle(color: Colors.black)),
+                              ),
+                            ),
+                          ],
+                        );
                       },
                     ),
                   ],
