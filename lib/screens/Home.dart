@@ -15,6 +15,8 @@ class homepage extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
+            backgroundColor: Colors.white,
+            shadowColor: Colors.white,
             floating: true,
             snap: true,
             pinned: false,
@@ -25,7 +27,7 @@ class homepage extends StatelessWidget {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     shape: CircleBorder(),
-                    padding: EdgeInsets.only(left: 10, right: 10),
+                    padding: EdgeInsets.only(left: 15, right: 15),
                   ),
                   child: Icon(Icons.car_repair_outlined), // icon inside the button
                   onPressed: () {
@@ -34,7 +36,10 @@ class homepage extends StatelessWidget {
                   },
                 ),
                 SizedBox(width: 8), // some space between button and text
-                Text('Moters'), // text outside the button
+                Padding(
+                  padding: const EdgeInsets.only( right: 15.0),
+                  child: Text('Moters',style: TextStyle(fontSize: 20),),
+                ), // text outside the button
               ],
             ),
             actions: [
@@ -43,7 +48,7 @@ class homepage extends StatelessWidget {
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       shape: CircleBorder(),
-                      padding: EdgeInsets.only(left: 1, right: 5),
+                      padding: EdgeInsets.only(left: 10, right: 10),
                     ),
                     child: Icon(Icons.home_work), // icon inside the button
                     onPressed: () {
@@ -53,7 +58,7 @@ class homepage extends StatelessWidget {
                   ),
                   SizedBox(width: 8), // some space between button and text
                   Padding(
-                    padding: const EdgeInsets.only(left: 1, right: 14),
+                    padding: const EdgeInsets.only(left: 1, right: 20),
                     child: Text('Property', style: TextStyle(fontSize: 20)),
                   ), // text outside the button
                 ],
@@ -72,14 +77,14 @@ class homepage extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              Icon(Icons.location_on_outlined, size: 30),
+                              Icon(Icons.location_on_outlined, size: 25),
                               SizedBox(width: 8),
-                              Text('Township Block II, Lahore...', style: TextStyle(fontSize: 22)),
+                              Text('Township Block II, Lahore...', style: TextStyle(fontSize: 18)),
                             ],
                           ),
                           Padding(
                             padding: const EdgeInsets.only(right: 12),
-                            child: Icon(Icons.notifications_none, size: 30),
+                            child: Icon(Icons.notifications_none, size: 24),
                           ),
                         ],
                       ),
@@ -117,10 +122,15 @@ width: 370,
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 12),
-                        child: Container(
-                          child: Image.asset('assets/images/download.png'),
-                        ),
+                        padding: const EdgeInsets.only(top: 5),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(15),
+
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown, // or BoxFit.contain, BoxFit.cover, etc.
+                                child: Image.asset('assets/images/download.png'),
+                              )
+                          )
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 13),
@@ -133,11 +143,11 @@ width: 370,
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(20),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Browse categories', style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold)),
+                            Text('Browse categories', style: TextStyle(color: Colors.black, fontSize: 23, fontWeight: FontWeight.bold)),
                             GestureDetector(
                               onTap: () {
                                 // Navigate to the new screen
@@ -146,197 +156,200 @@ width: 370,
                                   MaterialPageRoute(builder: (context) => adspage()),
                                 );
                               },
-                              child: Text('See All', style: TextStyle(color: Colors.blueAccent, fontSize: 20)),
+                              child: Text('See All', style: TextStyle(color: Colors.blueAccent, fontSize: 17)),
                             ),
                           ],
                         ),
                       ),
                       // Browser categories
-                      Container(
-                        height: 200,
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children: [
-                            Column(
-                              children: [
-                                Container(
-                                  width: 50,
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: DecorationImage(
-                                      image: AssetImage('assets/images/download.png'),
-                                      fit: BoxFit.cover,
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          height: 90,
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: [
+                              Column(
+                                children: [
+                                  Container(
+                                    width: 50,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                        image: AssetImage('assets/images/download.png'),
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(height: 8),
-                                Text('Image 1'),
-                              ],
-                            ),
-                            SizedBox(width: 10),
-                            Column(
-                              children: [
-                                Container(
-                                  width: 50,
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: DecorationImage(
-                                      image: AssetImage('assets/images/download.png'),
-                                      fit: BoxFit.cover,
+                                  SizedBox(height: 8),
+                                  Text('Image 1'),
+                                ],
+                              ),
+                              SizedBox(width: 10),
+                              Column(
+                                children: [
+                                  Container(
+                                    width: 50,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                        image: AssetImage('assets/images/download.png'),
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(height: 8),
-                                Text('Image 1'),
-                              ],
-                            ),
-                            SizedBox(width: 10),
-                            Column(
-                              children: [
-                                Container(
-                                  width: 50,
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: DecorationImage(
-                                      image: AssetImage('assets/images/download.png'),
-                                      fit: BoxFit.cover,
+                                  SizedBox(height: 8),
+                                  Text('Image 1'),
+                                ],
+                              ),
+                              SizedBox(width: 10),
+                              Column(
+                                children: [
+                                  Container(
+                                    width: 50,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                        image: AssetImage('assets/images/download.png'),
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(height: 8),
-                                Text('Image 1'),
-                              ],
-                            ),
-                            SizedBox(width: 10),
-                            Column(
-                              children: [
-                                Container(
-                                  width: 50,
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: DecorationImage(
-                                      image: AssetImage('assets/images/download.png'),
-                                      fit: BoxFit.cover,
+                                  SizedBox(height: 8),
+                                  Text('Image 1'),
+                                ],
+                              ),
+                              SizedBox(width: 10),
+                              Column(
+                                children: [
+                                  Container(
+                                    width: 50,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                        image: AssetImage('assets/images/download.png'),
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(height: 8),
-                                Text('Image 1'),
-                              ],
-                            ),
-                            SizedBox(width: 10),
-                            Column(
-                              children: [
-                                Container(
-                                  width: 50,
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: DecorationImage(
-                                      image: AssetImage('assets/images/download.png'),
-                                      fit: BoxFit.cover,
+                                  SizedBox(height: 8),
+                                  Text('Image 1'),
+                                ],
+                              ),
+                              SizedBox(width: 10),
+                              Column(
+                                children: [
+                                  Container(
+                                    width: 50,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                        image: AssetImage('assets/images/download.png'),
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(height: 8),
-                                Text('Image 1'),
-                              ],
-                            ),
-                            SizedBox(width: 10),
-                            Column(
-                              children: [
-                                Container(
-                                  width: 50,
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: DecorationImage(
-                                      image: AssetImage('assets/images/download.png'),
-                                      fit: BoxFit.cover,
+                                  SizedBox(height: 8),
+                                  Text('Image 1'),
+                                ],
+                              ),
+                              SizedBox(width: 10),
+                              Column(
+                                children: [
+                                  Container(
+                                    width: 50,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                        image: AssetImage('assets/images/download.png'),
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(height: 8),
-                                Text('Image 1'),
-                              ],
-                            ),
-                            SizedBox(width: 10),
-                            Column(
-                              children: [
-                                Container(
-                                  width: 50,
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: DecorationImage(
-                                      image: AssetImage('assets/images/download.png'),
-                                      fit: BoxFit.cover,
+                                  SizedBox(height: 8),
+                                  Text('Image 1'),
+                                ],
+                              ),
+                              SizedBox(width: 10),
+                              Column(
+                                children: [
+                                  Container(
+                                    width: 50,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                        image: AssetImage('assets/images/download.png'),
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(height: 8),
-                                Text('Image 1'),
-                              ],
-                            ),
-                            SizedBox(width: 10),
-                            Column(
-                              children: [
-                                Container(
-                                  width: 50,
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: DecorationImage(
-                                      image: AssetImage('assets/images/download.png'),
-                                      fit: BoxFit.cover,
+                                  SizedBox(height: 8),
+                                  Text('Image 1'),
+                                ],
+                              ),
+                              SizedBox(width: 10),
+                              Column(
+                                children: [
+                                  Container(
+                                    width: 50,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                        image: AssetImage('assets/images/download.png'),
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(height: 8),
-                                Text('Image 1'),
-                              ],
-                            ),
-                            SizedBox(width: 10),
-                            Column(
-                              children: [
-                                Container(
-                                  width: 50,
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: DecorationImage(
-                                      image: AssetImage('assets/images/download.png'),
-                                      fit: BoxFit.cover,
+                                  SizedBox(height: 8),
+                                  Text('Image 1'),
+                                ],
+                              ),
+                              SizedBox(width: 10),
+                              Column(
+                                children: [
+                                  Container(
+                                    width: 50,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                        image: AssetImage('assets/images/download.png'),
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(height: 8),
-                                Text('Image 1'),
-                              ],
-                            ),
-                            SizedBox(width: 10),
-                            Column(
-                              children: [
-                                Container(
-                                  width: 50,
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: DecorationImage(
-                                      image: AssetImage('assets/images/download.png'),
-                                      fit: BoxFit.cover,
+                                  SizedBox(height: 8),
+                                  Text('Image 1'),
+                                ],
+                              ),
+                              SizedBox(width: 10),
+                              Column(
+                                children: [
+                                  Container(
+                                    width: 50,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                        image: AssetImage('assets/images/download.png'),
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(height: 8),
-                                Text('Image 1'),
-                              ],
-                            ),
-                          ],
+                                  SizedBox(height: 8),
+                                  Text('Image 1'),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       // Moter Bikes
@@ -345,7 +358,7 @@ width: 370,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Mobile Phones', style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold)),
+                            Text('Mobile Phones', style: TextStyle(color: Colors.black, fontSize: 23, fontWeight: FontWeight.bold)),
                             GestureDetector(
                               onTap: () {
                                 // Navigate to the new screen
@@ -354,7 +367,7 @@ width: 370,
                                   MaterialPageRoute(builder: (context) => accountpage()),
                                 );
                               },
-                              child: Text('See All', style: TextStyle(color: Colors.blueAccent, fontSize: 20)),
+                              child: Text('See All', style: TextStyle(color: Colors.blueAccent, fontSize: 16)),
                             ),
                           ],
                         ),
@@ -429,7 +442,7 @@ width: 370,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Cars', style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold)),
+                            Text('Cars', style: TextStyle(color: Colors.black, fontSize: 23, fontWeight: FontWeight.bold)),
                             GestureDetector(
                               onTap: () {
                                 // Navigate to the new screen
@@ -438,7 +451,7 @@ width: 370,
                                   MaterialPageRoute(builder: (context) => Carspage()),
                                 );
                               },
-                              child: Text('See All', style: TextStyle(color: Colors.blueAccent, fontSize: 20)),
+                              child: Text('See All', style: TextStyle(color: Colors.blueAccent, fontSize: 16)),
                             ),
                           ],
                         ),
@@ -507,6 +520,7 @@ width: 370,
                           },
                         ),
                       ),
+                    //
 
 
 
