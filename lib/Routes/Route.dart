@@ -7,9 +7,11 @@ import '../screens/Account.dart';
 import '../screens/Ads.dart';
 import '../screens/Cars.dart';
 import '../screens/Home.dart';
+import '../screens/Jobs.dart';
 import '../screens/Moters.dart';
 import '../screens/chats.dart';
 import '../screens/property.dart';
+
 
 class AppRoutes {
   static const HOME = '/home';
@@ -20,6 +22,7 @@ class AppRoutes {
   static const property = '/property';
   static const moters = '/moters';
   static const Car = '/Carspage';
+  static const job = '/jobpage';
 
 
   static List<GetPage> routes = <GetPage>[
@@ -29,6 +32,7 @@ class AppRoutes {
     GetPage(name: ads, page: () => adspage()),
     GetPage(name: chat, page: () => chatpage()),
     GetPage(name: property, page: () => propertypage()),
+    GetPage(name: job, page: () => jobpage()),
     GetPage(name: moters, page: () => Moterpage()),
     GetPage(name: Car, page: () => Carspage()),
   ];
