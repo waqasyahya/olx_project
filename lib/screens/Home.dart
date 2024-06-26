@@ -21,17 +21,18 @@ class homepage extends StatelessWidget {
             floating: true,
             snap: true,
             pinned: false,
-            leading: Image.asset('assets/images/olximage.png'), // logo on the left side
+            leading: Image.asset(
+                'assets/images/olximage.png'), // logo on the left side
             title: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     shape: CircleBorder(),
                     padding: EdgeInsets.only(left: 15, right: 15),
                   ),
-                  child: Icon(Icons.car_repair_outlined), // icon inside the button
+                  child:
+                      Icon(Icons.car_repair_outlined), // icon inside the button
                   onPressed: () {
                     Get.to(() => Moterpage());
                     print('Button pressed');
@@ -39,8 +40,11 @@ class homepage extends StatelessWidget {
                 ),
                 SizedBox(width: 2), // some space between button and text
                 Padding(
-                  padding: const EdgeInsets.only( right: 23.0),
-                  child: Text('Moters',style: TextStyle(fontSize: 18),),
+                  padding: const EdgeInsets.only(right: 23.0),
+                  child: Text(
+                    'Moters',
+                    style: TextStyle(fontSize: 18),
+                  ),
                 ), // text outside the button
               ],
             ),
@@ -81,7 +85,8 @@ class homepage extends StatelessWidget {
                             children: [
                               Icon(Icons.location_on_outlined, size: 25),
                               SizedBox(width: 8),
-                              Text('Township Block II, Lahore...', style: TextStyle(fontSize: 18)),
+                              Text('Township Block II, Lahore...',
+                                  style: TextStyle(fontSize: 18)),
                             ],
                           ),
                           Padding(
@@ -130,16 +135,15 @@ class homepage extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 5),
+                          padding: const EdgeInsets.only(top: 5),
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(15),
-
+                              borderRadius: BorderRadius.circular(15),
                               child: FittedBox(
-                                fit: BoxFit.scaleDown, // or BoxFit.contain, BoxFit.cover, etc.
-                                child: Image.asset('assets/images/download.png'),
-                              )
-                          )
-                      ),
+                                fit: BoxFit
+                                    .scaleDown, // or BoxFit.contain, BoxFit.cover, etc.
+                                child:
+                                    Image.asset('assets/images/download.png'),
+                              ))),
                       Padding(
                         padding: const EdgeInsets.only(top: 13),
                         child: Container(
@@ -155,17 +159,39 @@ class homepage extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Browse categories', style: TextStyle(color: Colors.black, fontSize: 23, fontWeight: FontWeight.bold)),
+                            Text('Browse categories',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 23,
+                                    fontWeight: FontWeight.bold)),
                             GestureDetector(
                               onTap: () {
-                                // Navigate to the new screen
+                                // Navigate to the new screen with a slide transition from the right
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => adspage()),
+                                  PageRouteBuilder(
+                                    pageBuilder: (context, animation, secondaryAnimation) => adspage(),
+                                    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                      const begin = Offset(1.0, 0.0);
+                                      const end = Offset.zero;
+                                      const curve = Curves.ease;
+
+                                      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+                                      return SlideTransition(
+                                        position: animation.drive(tween),
+                                        child: child,
+                                      );
+                                    },
+                                  ),
                                 );
                               },
-                              child: Text('See All', style: TextStyle(color: Colors.blueAccent, fontSize: 17)),
+                              child: Text(
+                                'See All',
+                                style: TextStyle(color: Colors.blueAccent, fontSize: 17),
+                              ),
                             ),
+
                           ],
                         ),
                       ),
@@ -185,7 +211,8 @@ class homepage extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       image: DecorationImage(
-                                        image: AssetImage('assets/images/download.png'),
+                                        image: AssetImage(
+                                            'assets/images/download.png'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -203,7 +230,8 @@ class homepage extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       image: DecorationImage(
-                                        image: AssetImage('assets/images/download.png'),
+                                        image: AssetImage(
+                                            'assets/images/download.png'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -221,7 +249,8 @@ class homepage extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       image: DecorationImage(
-                                        image: AssetImage('assets/images/download.png'),
+                                        image: AssetImage(
+                                            'assets/images/download.png'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -239,7 +268,8 @@ class homepage extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       image: DecorationImage(
-                                        image: AssetImage('assets/images/download.png'),
+                                        image: AssetImage(
+                                            'assets/images/download.png'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -257,7 +287,8 @@ class homepage extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       image: DecorationImage(
-                                        image: AssetImage('assets/images/download.png'),
+                                        image: AssetImage(
+                                            'assets/images/download.png'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -275,7 +306,8 @@ class homepage extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       image: DecorationImage(
-                                        image: AssetImage('assets/images/download.png'),
+                                        image: AssetImage(
+                                            'assets/images/download.png'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -293,7 +325,8 @@ class homepage extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       image: DecorationImage(
-                                        image: AssetImage('assets/images/download.png'),
+                                        image: AssetImage(
+                                            'assets/images/download.png'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -311,7 +344,8 @@ class homepage extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       image: DecorationImage(
-                                        image: AssetImage('assets/images/download.png'),
+                                        image: AssetImage(
+                                            'assets/images/download.png'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -329,7 +363,8 @@ class homepage extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       image: DecorationImage(
-                                        image: AssetImage('assets/images/download.png'),
+                                        image: AssetImage(
+                                            'assets/images/download.png'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -347,7 +382,8 @@ class homepage extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       image: DecorationImage(
-                                        image: AssetImage('assets/images/download.png'),
+                                        image: AssetImage(
+                                            'assets/images/download.png'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -366,20 +402,40 @@ class homepage extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Mobile Phones', style: TextStyle(color: Colors.black, fontSize: 23, fontWeight: FontWeight.bold)),
+                            Text('Mobile Phones',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 23,
+                                    fontWeight: FontWeight.bold)),
                             GestureDetector(
                               onTap: () {
-                                // Navigate to the new screen
+                                // Navigate to the new screen with a slide transition from the right
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => accountpage()),
+                                  PageRouteBuilder(
+                                    pageBuilder: (context, animation, secondaryAnimation) => accountpage(),
+                                    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                      const begin = Offset(1.0, 0.0);
+                                      const end = Offset.zero;
+                                      const curve = Curves.ease;
+
+                                      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+                                      return SlideTransition(
+                                        position: animation.drive(tween),
+                                        child: child,
+                                      );
+                                    },
+                                  ),
                                 );
                               },
-                              child: Text('See All', style: TextStyle(color: Colors.blueAccent, fontSize: 16)),
+                              child: Text(
+                                'See All',
+                                style: TextStyle(color: Colors.blueAccent, fontSize: 17),
+                              ),
                             ),
                           ],
                         ),
-
                       ),
                       Container(
                         height: 240,
@@ -389,7 +445,8 @@ class homepage extends StatelessWidget {
                           itemBuilder: (context, index) {
                             final item = items[index];
                             return Padding(
-                              padding: EdgeInsets.only(right: 16), // Space between cards
+                              padding: EdgeInsets.only(
+                                  right: 16), // Space between cards
                               child: Card(
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(5),
@@ -399,12 +456,14 @@ class homepage extends StatelessWidget {
                                   width: 250,
                                   padding: EdgeInsets.all(2),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Container(
                                         height: 125,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(3),
+                                          borderRadius:
+                                              BorderRadius.circular(3),
                                           image: DecorationImage(
                                             image: AssetImage(item.imageUrl),
                                             fit: BoxFit.cover,
@@ -413,7 +472,8 @@ class homepage extends StatelessWidget {
                                       ),
                                       SizedBox(height: 8),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
                                             item.title,
@@ -444,26 +504,46 @@ class homepage extends StatelessWidget {
                           },
                         ),
                       ),
-                    //   Cars
+                      //   Cars
                       Padding(
                         padding: const EdgeInsets.all(10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Cars', style: TextStyle(color: Colors.black, fontSize: 23, fontWeight: FontWeight.bold)),
+                            Text('Cars',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 23,
+                                    fontWeight: FontWeight.bold)),
                             GestureDetector(
                               onTap: () {
-                                // Navigate to the new screen
+                                // Navigate to the new screen with a slide transition from the right
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => Carspage()),
+                                  PageRouteBuilder(
+                                    pageBuilder: (context, animation, secondaryAnimation) => Carspage(),
+                                    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                      const begin = Offset(1.0, 0.0);
+                                      const end = Offset.zero;
+                                      const curve = Curves.ease;
+
+                                      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+                                      return SlideTransition(
+                                        position: animation.drive(tween),
+                                        child: child,
+                                      );
+                                    },
+                                  ),
                                 );
                               },
-                              child: Text('See All', style: TextStyle(color: Colors.blueAccent, fontSize: 16)),
+                              child: Text(
+                                'See All',
+                                style: TextStyle(color: Colors.blueAccent, fontSize: 17),
+                              ),
                             ),
                           ],
                         ),
-
                       ),
                       Container(
                         height: 240,
@@ -473,7 +553,8 @@ class homepage extends StatelessWidget {
                           itemBuilder: (context, index) {
                             final item = carItems[index];
                             return Padding(
-                              padding: EdgeInsets.only(right: 16), // Space between cards
+                              padding: EdgeInsets.only(
+                                  right: 16), // Space between cards
                               child: Card(
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(5),
@@ -483,12 +564,14 @@ class homepage extends StatelessWidget {
                                   width: 250,
                                   padding: EdgeInsets.all(2),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Container(
                                         height: 125,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(3),
+                                          borderRadius:
+                                              BorderRadius.circular(3),
                                           image: DecorationImage(
                                             image: AssetImage(item.imageUrl),
                                             fit: BoxFit.cover,
@@ -497,7 +580,8 @@ class homepage extends StatelessWidget {
                                       ),
                                       SizedBox(height: 8),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
                                             item.title,
@@ -528,26 +612,46 @@ class homepage extends StatelessWidget {
                           },
                         ),
                       ),
-                    // jobs
+                      // jobs
                       Padding(
                         padding: const EdgeInsets.all(10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('Jobs', style: TextStyle(color: Colors.black, fontSize: 23, fontWeight: FontWeight.bold)),
+                            Text('Jobs',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 23,
+                                    fontWeight: FontWeight.bold)),
                             GestureDetector(
                               onTap: () {
-                                // Navigate to the new screen
+                                // Navigate to the new screen with a slide transition from the right
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => jobpage()),
+                                  PageRouteBuilder(
+                                    pageBuilder: (context, animation, secondaryAnimation) => jobpage(),
+                                    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                      const begin = Offset(1.0, 0.0);
+                                      const end = Offset.zero;
+                                      const curve = Curves.ease;
+
+                                      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+                                      return SlideTransition(
+                                        position: animation.drive(tween),
+                                        child: child,
+                                      );
+                                    },
+                                  ),
                                 );
                               },
-                              child: Text('See All', style: TextStyle(color: Colors.blueAccent, fontSize: 16)),
+                              child: Text(
+                                'See All',
+                                style: TextStyle(color: Colors.blueAccent, fontSize: 17),
+                              ),
                             ),
                           ],
                         ),
-
                       ),
                       Container(
                         height: 240,
@@ -557,7 +661,8 @@ class homepage extends StatelessWidget {
                           itemBuilder: (context, index) {
                             final item = jobItems[index];
                             return Padding(
-                              padding: EdgeInsets.only(right: 16), // Space between cards
+                              padding: EdgeInsets.only(
+                                  right: 16), // Space between cards
                               child: Card(
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(5),
@@ -567,12 +672,14 @@ class homepage extends StatelessWidget {
                                   width: 250,
                                   padding: EdgeInsets.all(2),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Container(
                                         height: 125,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(3),
+                                          borderRadius:
+                                              BorderRadius.circular(3),
                                           image: DecorationImage(
                                             image: AssetImage(item.imageUrl),
                                             fit: BoxFit.cover,
@@ -581,7 +688,8 @@ class homepage extends StatelessWidget {
                                       ),
                                       SizedBox(height: 8),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
                                             item.title,
@@ -612,12 +720,8 @@ class homepage extends StatelessWidget {
                           },
                         ),
                       ),
-
-
                     ],
-
                   ),
-
                 ),
               ],
             ),
@@ -627,7 +731,3 @@ class homepage extends StatelessWidget {
     );
   }
 }
-
-
-
-

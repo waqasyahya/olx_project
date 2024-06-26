@@ -77,7 +77,7 @@ class _ChatPageState extends State<chatpage> {
               Container(
                 height: 2,
 
-                color: Colors.yellowAccent,
+                color: Colors.blueGrey,
                 margin: EdgeInsets.only(top: 10),
                 child: Row(
                   children: [
@@ -85,9 +85,9 @@ class _ChatPageState extends State<chatpage> {
                       flex: 1,
                       child: _currentIndex == 0
                           ? Container(
-                        height: 2,
-                        width: 100,
-                        color: Colors.red,
+                        height: 5,
+                        width: 45,
+                        color: Colors.black,
                       )
                           : Container(),
                     ),
@@ -95,8 +95,9 @@ class _ChatPageState extends State<chatpage> {
                       flex: 1,
                       child: _currentIndex == 1
                           ? Container(
-                        height: 2,
-                        width: 100,
+                        height: 5,
+                        width: 45,
+                        padding: EdgeInsets.only(left: 10),
                         color: Colors.black,
                       )
                           : Container(),
@@ -105,9 +106,9 @@ class _ChatPageState extends State<chatpage> {
                       flex: 1,
                       child: _currentIndex == 2
                           ? Container(
-                        height: 2,
-                        width: 100,
-                        color: Colors.green,
+                        height: 5,
+                        width: 45,
+                        color: Colors.black,
                       )
                           : Container(),
                     ),
@@ -132,56 +133,182 @@ class _ChatPageState extends State<chatpage> {
                     });
                   },
                   children: [
-                    ListView.builder(
-                      itemCount: allData.length,
-                      itemBuilder: (context, index) {
-                        return Stack(
-                          children: [
-                            if (allData[index].isImage)
-                              Image.asset(allData[index].imageUrl),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: ListTile(
-                                title: Text(allData[index].text, style: TextStyle(color: Colors.black)),
-                              ),
-                            ),
-                          ],
-                        );
-                      },
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          ListView.builder(
+                            shrinkWrap: true,
+                            physics: NeverScrollableScrollPhysics(),
+                            itemCount: allData.length,
+                            itemBuilder: (context, index) {
+                              return Center(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    if (allData[index].isImage)
+                                      Image.asset(
+                                        height: 120,
+                                        allData[index].imageUrl,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(7),
+                                      child: Text(
+                                        allData[index].text,
+                                        style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.w500),
+                                      ),
+                                    ),
+                                    const Padding(
+                                      padding: EdgeInsets.all(2),
+                                      child: Text(
+                                        'Find something you like and start a conversation!',
+                                        style: TextStyle(color: Colors.black),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(6),
+                                      child: SizedBox(
+                                        width: double.infinity, // Set the width to maximum available space
+                                        child: OutlinedButton(
+                                          onPressed: () {
+                                            // Define what happens when the button is pressed
+                                            print('Button Pressed');
+                                          },
+                                          style: OutlinedButton.styleFrom(
+                                            backgroundColor: Colors.blueGrey,
+                                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+                                            minimumSize: Size(double.infinity, 1), // Set the minimum size
+                                          ),
+                                          child: Text('Explore the latest Ads', style: TextStyle(color: Colors.white, fontSize: 24),),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
                     ),
-                    ListView.builder(
-                      itemCount: buyingData.length,
-                      itemBuilder: (context, index) {
-                        return Stack(
-                          children: [
-                            if (buyingData[index].isImage)
-                              Image.asset(buyingData[index].imageUrl),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: ListTile(
-                                title: Text(buyingData[index].text, style: TextStyle(color: Colors.black)),
-                              ),
-                            ),
-                          ],
-                        );
-                      },
+
+
+
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          ListView.builder(
+                            shrinkWrap: true,
+                            physics: NeverScrollableScrollPhysics(),
+                            itemCount: buyingData.length,
+                            itemBuilder: (context, index) {
+                              return Center(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    if (buyingData[index].isImage)
+                                      Image.asset(
+                                        height: 120,
+                                        buyingData[index].imageUrl,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(7),
+                                      child: Text(
+                                        buyingData[index].text,
+                                        style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.w500),
+                                      ),
+                                    ),
+                                    const Padding(
+                                      padding: EdgeInsets.all(2),
+                                      child: Text(
+                                        'Find something you like and start a conversation!',
+                                        style: TextStyle(color: Colors.black),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(6),
+                                      child: SizedBox(
+                                        width: double.infinity, // Set the width to maximum available space
+                                        child: OutlinedButton(
+                                          onPressed: () {
+                                            // Define what happens when the button is pressed
+                                            print('Button Pressed');
+                                          },
+                                          style: OutlinedButton.styleFrom(
+                                            backgroundColor: Colors.blueGrey,
+                                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+                                            minimumSize: Size(double.infinity, 1), // Set the minimum size
+                                          ),
+                                          child: Text('Explore the latest Ads', style: TextStyle(color: Colors.white, fontSize: 24),),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
                     ),
-                    ListView.builder(
-                      itemCount: buyingData.length,
-                      itemBuilder: (context, index) {
-                        return Stack(
-                          children: [
-                            if (sellingData[index].isImage)
-                              Image.asset(sellingData[index].imageUrl),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: ListTile(
-                                title: Text(sellingData[index].text, style: TextStyle(color: Colors.black)),
-                              ),
-                            ),
-                          ],
-                        );
-                      },
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          ListView.builder(
+                            shrinkWrap: true,
+                            physics: NeverScrollableScrollPhysics(),
+                            itemCount: sellingData.length,
+                            itemBuilder: (context, index) {
+                              return Center(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    if (sellingData[index].isImage)
+                                      Image.asset(
+                                        height: 120,
+                                        sellingData[index].imageUrl,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(7),
+                                      child: Text(
+                                        sellingData[index].text,
+                                        style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.w500),
+                                      ),
+                                    ),
+                                    const Padding(
+                                      padding: EdgeInsets.all(2),
+                                      child: Text(
+                                        'We have keep messages for any items you are selling in here',
+                                        style: TextStyle(color: Colors.black),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(6),
+                                      child: SizedBox(
+                                        width: double.infinity, // Set the width to maximum available space
+                                        child: OutlinedButton(
+                                          onPressed: () {
+                                            // Define what happens when the button is pressed
+                                            print('Button Pressed');
+                                          },
+                                          style: OutlinedButton.styleFrom(
+                                            backgroundColor: Colors.blueGrey,
+                                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+                                            minimumSize: Size(double.infinity, 1), // Set the minimum size
+                                          ),
+                                          child: Text('Start selling', style: TextStyle(color: Colors.white, fontSize: 24),),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

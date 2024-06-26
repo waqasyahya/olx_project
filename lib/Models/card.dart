@@ -55,17 +55,17 @@ class ChatItem {
 }
 
 List<ChatItem> allData = [
-  ChatItem(text: '1 1', imageUrl: 'assets/images/download.png', isImage: true),
+  ChatItem(text: 'No Message Yet?', imageUrl: 'assets/images/message.png', isImage: true),
 
 
 ];
 
 List<ChatItem> buyingData = [
-  ChatItem(text: '2 1', imageUrl: 'assets/images/download.png', isImage: true),
+  ChatItem(text: 'No Message Yet?', imageUrl: 'assets/images/message.png', isImage: true),
 
 ];
 
 List<ChatItem> sellingData = [
-  ChatItem(text: '3 1', imageUrl: 'assets/images/download.png', isImage: true),
+  ChatItem(text: 'No Message Yet?', imageUrl: 'assets/images/message.png', isImage: true),
 
 ];
