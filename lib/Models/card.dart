@@ -86,19 +86,26 @@ List<Item> Sellitems = [
   Item(title: 'Title 3', description: 'This is the description for item 3.', imageUrl: 'assets/images/download.png'),
   Item(title: 'Title 4', description: 'This is the description for item 4.', imageUrl: 'assets/images/download.png'),
   Item(title: 'Title 5', description: 'This is the description for item 5.', imageUrl: 'assets/images/download.png'),
-  Item(title: 'Title 1', description: 'This is the description for item 1.', imageUrl: 'assets/images/download.png'),
-  Item(title: 'Title 2', description: 'This is the description for item 2.', imageUrl: 'assets/images/download.png'),
-  Item(title: 'Title 3', description: 'This is the description for item 3.', imageUrl: 'assets/images/download.png'),
-  Item(title: 'Title 4', description: 'This is the description for item 4.', imageUrl: 'assets/images/download.png'),
-  Item(title: 'Title 5', description: 'This is the description for item 5.', imageUrl: 'assets/images/download.png'),
-  Item(title: 'Title 1', description: 'This is the description for item 1.', imageUrl: 'assets/images/download.png'),
-  Item(title: 'Title 2', description: 'This is the description for item 2.', imageUrl: 'assets/images/download.png'),
-  Item(title: 'Title 3', description: 'This is the description for item 3.', imageUrl: 'assets/images/download.png'),
-  Item(title: 'Title 4', description: 'This is the description for item 4.', imageUrl: 'assets/images/download.png'),
-  Item(title: 'Title 5', description: 'This is the description for item 5.', imageUrl: 'assets/images/download.png'),
-  Item(title: 'Title 1', description: 'This is the description for item 1.', imageUrl: 'assets/images/download.png'),
-  Item(title: 'Title 2', description: 'This is the description for item 2.', imageUrl: 'assets/images/download.png'),
-  Item(title: 'Title 3', description: 'This is the description for item 3.', imageUrl: 'assets/images/download.png'),
-  Item(title: 'Title 4', description: 'This is the description for item 4.', imageUrl: 'assets/images/download.png'),
-  Item(title: 'Title 5', description: 'This is the description for item 5.', imageUrl: 'assets/images/download.png'),
+
 ];
+
+
+class OtherItem {
+  final String title;
+  final String description;
+  final String imageUrl;
+
+  OtherItem({required this.title, required this.description, required this.imageUrl});
+}
+
+List<Item> OtherItems = [
+  Item(title: 'waqas', description: 'This is the description for item 1.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'usman', description: 'This is the description for item 2.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'ali', description: 'This is the description for item 3.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'qamer', description: 'This is the description for item 4.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'talha', description: 'This is the description for item 5.', imageUrl: 'assets/images/download.png'),
+
+];
+
+
+

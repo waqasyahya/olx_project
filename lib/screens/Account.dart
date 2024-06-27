@@ -10,55 +10,197 @@ class accountpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Image.asset('assets/images/olximage.png'), // logo on the left side
-        title:
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: SingleChildScrollView(
+        child: Column(
           children: [
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                shape: CircleBorder(),
-                padding: EdgeInsets.only(left: 10,right: 10),
+            Padding(
+              padding: const EdgeInsets.only(left: 25, top: 70),
+              child: Column(
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: 100, // adjust the width to your liking
+                        height: 100, // adjust the height to your liking
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/download.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 10), // add some space between the image and the text
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Waqas',
+                            style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 6.0),
+                            child: Text(
+                              'View and edit profile',
+                              style: TextStyle(
+                                fontSize: 20,
+                                decoration: TextDecoration.underline,
+                                decorationStyle: TextDecorationStyle.solid, // or TextDecorationStyle.dashed, etc.
+                                decorationThickness: 2, // add some space between the text and the underline
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  // Add more content below the image and text
+                  SizedBox(height: 20), // add some space between the top section and the bottom section
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Text('Favorite & Saved', style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
+                      ),
+                    ],
+                  ),
+                  ListView(
+                    shrinkWrap: true, // add this property
+                    physics: NeverScrollableScrollPhysics(), // add this property
+                    children: [
+                      ListTile(
+                        leading: Padding(
+                          padding: const EdgeInsets.only(bottom: 50),
+                          child: Icon(Icons.favorite_border,size: 25,),
+                        ), // left side icon
+                        title: Text('searches',style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold),), // main text
+                        subtitle: Text('All of your favorite ads & saved filters',style: TextStyle(fontSize: 18),), // secondary text below main text
+                        trailing: Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: Icon(Icons.arrow_forward_ios),
+                        ), // right side icon
+                      ),
+                      Divider(),
+                      ListTile(
+                        leading: Padding(
+                          padding: const EdgeInsets.only(bottom: 50),
+                          child: Icon(Icons.remove_red_eye_outlined,size: 28,),
+                        ), // left side icon
+                        title: Text('Public profile',style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold),), // main text
+                        subtitle: Text('See how other view your profile',style: TextStyle(fontSize: 18),), // secondary text below main text
+                        trailing: Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: Icon(Icons.arrow_forward_ios),
+                        ), // right side icon
+                      ),
+                      Divider(),
+                      ListTile(
+                        leading: Padding(
+                          padding: const EdgeInsets.only(bottom: 50),
+                          child: Icon(Icons.event_busy,size: 28,),
+                        ), // left side icon
+                        title: Text('Buy Discount Packages',style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold),), // main text
+                        subtitle: Text('Sell faster, more & at higher margin with packages',style: TextStyle(fontSize: 18),), // secondary text below main text
+                        trailing: Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: Icon(Icons.arrow_forward_ios),
+                        ), // right side icon
+                      ),
+                      Divider(),
+                      ListTile(
+                        leading: Padding(
+                          padding: const EdgeInsets.only(bottom: 50),
+                          child: Icon(Icons.note_outlined,size: 28,),
+                        ), // left side icon
+                        title: Text('Order and Billing Info',style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold),), // main text
+                        subtitle: Text('Order, billing and invoices',style: TextStyle(fontSize: 18),), // secondary text below main text
+                        trailing: Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: Icon(Icons.arrow_forward_ios),
+                        ), // right side icon
+                      ),
+                      Divider(),
+                      ListTile(
+                        leading: Padding(
+                          padding: const EdgeInsets.only(bottom: 50),
+                          child: Icon(Icons.drive_eta_rounded,size: 28,),
+                        ), // left side icon
+                        title: Text('Delivery Orders',style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold),), // main text
+                        subtitle: Text('Track your selling orbuying delivery orders',style: TextStyle(fontSize: 18),), // secondary text below main text
+                        trailing: Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: Icon(Icons.arrow_forward_ios),
+                        ), // right side icon
+                      ),
+                      Divider(),
+                      ListTile(
+                        leading: Padding(
+                          padding: const EdgeInsets.only(bottom: 50),
+                          child: Icon(Icons.settings,size: 28,),
+                        ), // left side icon
+                        title: Text('Settings',style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold),), // main text
+                        subtitle: Text('privacy and manage account',style: TextStyle(fontSize: 18),), // secondary text below main text
+                        trailing: Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: Icon(Icons.arrow_forward_ios),
+                        ), // right side icon
+                      ),
+                      Divider(),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Container(
+                          width: double.infinity,
+                        height: 20,
+                          color: Colors.grey,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 1),
+
+                          ),
+                        ),
+                      ),
+                      ListTile(
+                        leading: Padding(
+                          padding: const EdgeInsets.only(bottom: 50),
+                          child: Icon(Icons.offline_bolt,size: 28,),
+                        ), // left side icon
+                        title: Text('Help & Support',style: TextStyle(fontSize: 23,fontWeight: FontWeight.bold),), // main text
+                        subtitle: Text('Heip center and legal terms',style: TextStyle(fontSize: 18),), // secondary text below main text
+                        trailing: Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: Icon(Icons.arrow_forward_ios),
+                        ), // right side icon
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 20,
+                          color: Colors.grey,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 1),
+
+                          ),
+                        ),
+                      ),
+                      ListTile(
+                        leading: Padding(
+                          padding: const EdgeInsets.only(bottom: 50),
+                          child: Icon(Icons.logout,size: 30,),
+                        ), // left side icon
+                        title: Text('Logout',style: TextStyle(fontSize: 29,fontWeight: FontWeight.bold),), // main text
+                        subtitle: Text('',style: TextStyle(fontSize: 18),), // secondary text below main text
+                       // right side icon
+                      ),
+                      // Add more list items here
+                    ],
+                  ),
+                ],
               ),
-              child: Icon(Icons.car_repair_outlined), // icon inside the button
-              onPressed: () {
-                Get.to(() => Moterpage());
-                print('Button pressed');
-              },
             ),
-            SizedBox(width: 8), // some space between button and text
-            Text('Moters'), // text outside the button
           ],
         ),
-
-
-        actions: [
-          Row(
-
-            children: [
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.only(left: 10,right: 10),
-                ),
-                child: Icon(Icons.home_work), // icon inside the button
-                onPressed: () {
-                  Get.to(() => propertypage());
-                  print('Button pressed');
-                },
-              ),
-              SizedBox(width: 8), // some space between button and text
-              Padding(
-                padding: const EdgeInsets.only(left: 15,right: 15),
-                child: Text('Property',style: TextStyle(fontSize: 20),),
-              ), // text outside the button
-            ],
-          )
-        ],
-      ),
-      body: Container(
-        child: Text('this is account page'),
       ),
     );
   }

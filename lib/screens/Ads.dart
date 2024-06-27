@@ -10,56 +10,74 @@ class adspage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Image.asset('assets/images/olximage.png'), // logo on the left side
-        title:
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                shape: CircleBorder(),
-                padding: EdgeInsets.only(left: 10,right: 10),
-              ),
-              child: Icon(Icons.car_repair_outlined), // icon inside the button
-              onPressed: () {
-                Get.to(() => Moterpage());
-                print('Button pressed');
-              },
-            ),
-            SizedBox(width: 8), // some space between button and text
-            Text('Moters'), // text outside the button
-          ],
-        ),
 
-
-        actions: [
-          Row(
-
+      body: StreamBuilder<Object>(
+        stream: null,
+        builder: (context, snapshot) {
+          return Column(
             children: [
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.only(left: 10,right: 10),
-                ),
-                child: Icon(Icons.home_work), // icon inside the button
-                onPressed: () {
-                  Get.to(() => propertypage());
-                  print('Button pressed');
-                },
+              Row(
+                children: [
+                  Text('My Ads', style: TextStyle(fontSize: 24,fontWeight: FontWeight.w500,backgroundColor: Colors.white),),
+                // This will push the "My Ads" text to the right
+
+                ],
               ),
-              SizedBox(width: 8), // some space between button and text
               Padding(
-                padding: const EdgeInsets.only(left: 15,right: 15),
-                child: Text('Property',style: TextStyle(fontSize: 20),),
-              ), // text outside the button
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.blue, backgroundColor: Colors.white.withOpacity(0.8), // text color
+                        side: BorderSide(color: Colors.blueAccent, width: 1), // border color
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(Icons.filter_list),
+                          Text('Filters'),
+                        ],
+                      ),
+                      onPressed: () {
+                        // Add button 1 press action here
+                      },
+                    ),
+                    SizedBox(width: 10), // Add some space between buttons
+                    ElevatedButton(
+                      child: Text('All Ads',style: TextStyle(color: Colors.black),),
+                      onPressed: () {
+                        // Add button 2 press action here
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  child: Row(
+                    children: [
+                      Text('Discounts on Bundles',style: TextStyle(fontSize: 20,color: Colors.blueGrey),),
+                      Spacer(), // This will take up the remaining space
+                      Text('view packages',style: TextStyle(fontSize: 20,color: Colors.blueAccent),),
+                      Icon(Icons.arrow_forward_ios,size: 20,color: Colors.blueAccent,),
+
+                    ],
+                  ),
+                ),
+
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 200,  bottom: 100),
+                child: Center(
+                  child: Text('You do not have ads with current filters',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                ),
+              ),
             ],
-          )
-        ],
-      ),
-      body: Container(
-        child: Text('this is ads page'),
-      ),
+          );
+        },
+      )
     );
   }
 }

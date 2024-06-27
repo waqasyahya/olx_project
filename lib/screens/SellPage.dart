@@ -71,6 +71,32 @@ void showSellPage() {
                       );
                     },
                   ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: Text(
+                          'Other',
+                          style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
+                  ),
+                  ListView.builder(
+                    shrinkWrap: true,
+                    physics: ClampingScrollPhysics(),
+                    itemCount: OtherItems.length,
+                    itemBuilder: (context, index) {
+                      return ListTile(
+                        leading: CircleAvatar(
+                          backgroundImage: AssetImage(OtherItems[index].imageUrl),
+                        ),
+                        title: Text(OtherItems[index].title),
+                        trailing: Icon(Icons.arrow_forward_ios),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
