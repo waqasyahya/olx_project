@@ -69,3 +69,36 @@ List<ChatItem> sellingData = [
   ChatItem(text: 'No Message Yet?', imageUrl: 'assets/images/message.png', isImage: true),
 
 ];
+
+
+
+class SellItem {
+  final String title;
+  final String description;
+  final String imageUrl;
+
+  SellItem({required this.title, required this.description, required this.imageUrl});
+}
+
+List<Item> Sellitems = [
+  Item(title: 'Title 1', description: 'This is the description for item 1.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'Title 2', description: 'This is the description for item 2.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'Title 3', description: 'This is the description for item 3.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'Title 4', description: 'This is the description for item 4.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'Title 5', description: 'This is the description for item 5.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'Title 1', description: 'This is the description for item 1.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'Title 2', description: 'This is the description for item 2.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'Title 3', description: 'This is the description for item 3.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'Title 4', description: 'This is the description for item 4.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'Title 5', description: 'This is the description for item 5.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'Title 1', description: 'This is the description for item 1.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'Title 2', description: 'This is the description for item 2.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'Title 3', description: 'This is the description for item 3.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'Title 4', description: 'This is the description for item 4.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'Title 5', description: 'This is the description for item 5.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'Title 1', description: 'This is the description for item 1.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'Title 2', description: 'This is the description for item 2.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'Title 3', description: 'This is the description for item 3.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'Title 4', description: 'This is the description for item 4.', imageUrl: 'assets/images/download.png'),
+  Item(title: 'Title 5', description: 'This is the description for item 5.', imageUrl: 'assets/images/download.png'),
+];
