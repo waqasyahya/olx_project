@@ -527,7 +527,7 @@ class homepage extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   PageRouteBuilder(
-                                    pageBuilder: (context, animation, secondaryAnimation) => Carspage(),
+                                    pageBuilder: (context, animation, secondaryAnimation) => AnimatedExpandCollapseScreen(),
                                     transitionsBuilder: (context, animation, secondaryAnimation, child) {
                                       const begin = Offset(1.0, 0.0);
                                       const end = Offset.zero;

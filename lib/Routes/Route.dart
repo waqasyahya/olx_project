@@ -38,7 +38,7 @@ class AppRoutes {
     GetPage(name: property, page: () => propertypage()),
     GetPage(name: job, page: () => jobpage()),
     GetPage(name: moters, page: () => Moterpage()),
-    GetPage(name: Car, page: () => Carspage()),
+    GetPage(name: Car, page: () => AnimatedExpandCollapseScreen()),
     GetPage(name: theme, page: () => ThemeSelectionPage()),
     GetPage(name: Jobpopup, page: () => JobPagePopup()),
 
