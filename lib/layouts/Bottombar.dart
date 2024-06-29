@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../Routes/Route.dart';
-import '../screens/Account.dart';
-import '../screens/Ads.dart';
-import '../screens/Home.dart';
+
 import '../screens/SellPage.dart';
-import '../screens/Chats.dart';
-import 'ThreeColorCircle.dart'; // Add this line
+import '../screens/home.dart';
+import '../screens/chats.dart';
+import '../screens/ads.dart';
+import '../screens/account.dart';
+import '../routes/route.dart';
+import 'ThreeColorCircle.dart';
 
 class BottomNavigationPageController extends GetxController {
   static BottomNavigationPageController get to => Get.find();
@@ -31,9 +32,12 @@ class BottomNavigationPageController extends GetxController {
   }
 
   // void showSellPage() {
-  //   Get.to(SellPage());
+  //   Get.toNamed(AppRoutes.sell);
   // }
 }
+
+
+
 
 
 class BottomNavigationPage extends StatelessWidget {
@@ -44,9 +48,9 @@ class BottomNavigationPage extends StatelessWidget {
         body: IndexedStack(
           index: BottomNavigationPageController.to.currentIndex.value,
           children: [
-            homepage(), // Ensure these pages exist and are correctly referenced
+            homepage(),
             chatpage(),
-            Container(), // Placeholder for SellPage (or handle navigation differently)
+            Container(),
             adspage(),
             accountpage(),
           ],
@@ -59,22 +63,20 @@ class BottomNavigationPage extends StatelessWidget {
                 type: BottomNavigationBarType.fixed,
                 currentIndex: BottomNavigationPageController.to.currentIndex.value,
                 onTap: BottomNavigationPageController.to.changePage,
-                selectedItemColor: Colors.black,
-                unselectedItemColor: Colors.black,
+                selectedItemColor: Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
+                unselectedItemColor: Theme.of(context).bottomNavigationBarTheme.unselectedItemColor,
                 items: [
                   BottomNavigationBarItem(
-                    icon: Icon(Icons.home, color: Colors.black, size: 20),
+                    icon: Icon(Icons.home, size: 20),
                     label: 'HOME',
                   ),
                   BottomNavigationBarItem(
                     icon: ClipOval(
-                      child: Icon(Icons.chat_bubble_outline_rounded, color: Colors.black, size: 20),
+                      child: Icon(Icons.chat_bubble_outline_rounded, size: 20),
                     ),
                     label: 'CHATS',
                   ),
-
                   BottomNavigationBarItem(
-
                     icon: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -85,10 +87,6 @@ class BottomNavigationPage extends StatelessWidget {
                             painter: ThreeColorCirclePainter(),
                           ),
                         ),
-                        // Padding(
-                        //   padding: const EdgeInsets.only(top: 1),
-                        //   child: Text('Sell', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold)),
-                        // ),
                       ],
                     ),
                     label: '',
@@ -106,7 +104,7 @@ class BottomNavigationPage extends StatelessWidget {
                     label: 'My Ads',
                   ),
                   BottomNavigationBarItem(
-                    icon: Icon(Icons.person, color: Colors.black, size: 20),
+                    icon: Icon(Icons.person, size: 20),
                     label: 'Account',
                   ),
                 ],

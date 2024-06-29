@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     _controller.addListener(() {
       if (_animation.value == 1) {
         // Navigate to the next screen after the animation completes
-        Future.delayed(Duration(seconds: 5)).then((_) {
+        Future.delayed(Duration(seconds: 1)).then((_) {
           try {
             Get.offAllNamed(AppRoutes.HOME);
           } catch (e) {

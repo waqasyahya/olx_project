@@ -7,6 +7,8 @@ import 'Moters.dart';
 class adspage extends StatelessWidget {
   const adspage({super.key});
 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,8 +20,9 @@ class adspage extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Text('My Ads', style: TextStyle(fontSize: 24,fontWeight: FontWeight.w500,backgroundColor: Colors.white),),
-                // This will push the "My Ads" text to the right
+                  Text('My Ads', style: TextStyle(fontSize: 24,fontWeight: FontWeight.w500),),
+                  // // backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+                  // elevation: Theme.of(context).appBarTheme.elevation,
 
                 ],
               ),
@@ -45,7 +48,7 @@ class adspage extends StatelessWidget {
                     ),
                     SizedBox(width: 10), // Add some space between buttons
                     ElevatedButton(
-                      child: Text('All Ads',style: TextStyle(color: Colors.black),),
+                      child: Text('All Ads',),
                       onPressed: () {
                         // Add button 2 press action here
                       },

@@ -1,8 +1,8 @@
+import 'package:app_color/app_color.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:olx_project/screens/property.dart';
+import 'package:olx_project/Models/Colors.dart';
 
-import 'Moters.dart';
+import 'Setting.dart';
 
 class accountpage extends StatelessWidget {
   const accountpage({super.key});
@@ -96,6 +96,36 @@ class accountpage extends StatelessWidget {
                             padding: const EdgeInsets.only(bottom: 8.0),
                             child: Icon(Icons.arrow_forward_ios),
                           ), // right side icon
+                        ),
+                        Divider(),
+                        ListTile(
+                          leading: Padding(
+                            padding: const EdgeInsets.only(bottom: 50),
+                            child: Icon(Icons.invert_colors_on_sharp, size: 25,),
+                          ), // left side icon
+                          title: Text('Theme Change', style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),), // main text
+                          subtitle: Text('Theme will be change ', style: TextStyle(fontSize: 17),), // secondary text below main text
+                          trailing: Padding(
+                            padding: const EdgeInsets.only(bottom: 8.0),
+                            child: Icon(Icons.arrow_forward_ios, size: 24, color: AppColors.onSecondary,), // right side icon
+                          ), // right side icon
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              PageRouteBuilder(
+                                pageBuilder: (context, animation, secondaryAnimation) => ThemeSelectionPage(),
+                                transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                  return SlideTransition(
+                                    position: Tween<Offset>(
+                                      begin: Offset(1.0, 0.0),
+                                      end: Offset.zero,
+                                    ).animate(animation),
+                                    child: child,
+                                  );
+                                },
+                              ),
+                            );
+                          },
                         ),
                         Divider(),
                         ListTile(

@@ -27,9 +27,10 @@ class _ChatPageState extends State<chatpage> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            title: Text('Chats', style: TextStyle(fontSize: 30, color: Colors.black, fontWeight: FontWeight.w500)),
-            backgroundColor: Colors.white,
-            elevation: 0,
+            title: Text('Chats', style: TextStyle(fontSize: 30,  fontWeight: FontWeight.w500)),
+            backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+            elevation: Theme.of(context).appBarTheme.elevation,
+
             floating: true,
             snap: true,
             pinned: false,

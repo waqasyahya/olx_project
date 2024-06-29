@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:olx_project/screens/property.dart';
 import '../Models/card.dart';
+import '../PopupScreen/JobPopup.dart';
 import 'Account.dart';
 import 'Ads.dart';
 import 'Cars.dart';
@@ -15,63 +16,68 @@ class homepage extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          SliverAppBar(
-            backgroundColor: Colors.white,
-            shadowColor: Colors.white,
-            floating: true,
-            snap: true,
-            pinned: false,
-            leading: Image.asset(
-                'assets/images/olximage.png'), // logo on the left side
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shape: CircleBorder(),
-                    padding: EdgeInsets.only(left: 15, right: 15),
-                  ),
-                  child:
-                      Icon(Icons.car_repair_outlined), // icon inside the button
-                  onPressed: () {
-                    Get.to(() => Moterpage());
-                    print('Button pressed');
-                  },
-                ),
-                SizedBox(width: 2), // some space between button and text
-                Padding(
-                  padding: const EdgeInsets.only(right: 23.0),
-                  child: Text(
-                    'Moters',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                ), // text outside the button
-              ],
+        SliverAppBar(
+          backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+          elevation: Theme.of(context).appBarTheme.elevation,
+        // backgroundColor: Colors.white,
+        shadowColor: Colors.white,
+        floating: true,
+        snap: true,
+        pinned: false,
+        leading: Image.asset('assets/images/olximage.png'), // logo on the left side
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                shape: CircleBorder(),
+                padding: EdgeInsets.only(left: 15, right: 15),
+                // primary: Theme.of(context).textTheme.button!.color,
+              ),
+              onPressed: () {
+                Get.to(() => Moterpage());
+                print('Button pressed');
+              },
+              child: Icon(Icons.car_repair_outlined), // icon inside the button
             ),
-            actions: [
-              Row(
-                children: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      shape: CircleBorder(),
-                      padding: EdgeInsets.only(left: 20, right: 20),
-                    ),
-                    child: Icon(Icons.home_work), // icon inside the button
-                    onPressed: () {
-                      Get.to(() => propertypage());
-                      print('Button pressed');
-                    },
-                  ),
-                  SizedBox(width: 2), // some space between button and text
-                  Padding(
-                    padding: const EdgeInsets.only(left: 1, right: 20),
-                    child: Text('Property', style: TextStyle(fontSize: 18)),
-                  ), // text outside the button
-                ],
-              )
+            SizedBox(width: 2), // some space between button and text
+            Padding(
+              padding: const EdgeInsets.only(right: 23.0),
+              child: Text(
+                'Moters',
+                style: TextStyle(fontSize: 18),
+              ),
+            ), // text outside the button
+          ],
+        ),
+        actions: [
+          Row(
+            children: [
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  shape: CircleBorder(),
+                  padding: EdgeInsets.only(left: 20, right: 20),
+                ),
+                onPressed: () {
+                  Get.to(() => propertypage());
+                  print('Button pressed');
+                },
+                child: Icon(Icons.home_work), // icon inside the button
+              ),
+              SizedBox(width: 2), // some space between button and text
+              Padding(
+                padding: const EdgeInsets.only(left: 1, right: 20),
+                child: Text(
+                  'Property',
+                  style: TextStyle(fontSize: 18),
+                ),
+              ), // text outside the button
             ],
-          ),
-          SliverList(
+          )
+        ],
+      ),
+
+        SliverList(
             delegate: SliverChildListDelegate(
               [
                 Padding(
@@ -125,7 +131,7 @@ class homepage extends StatelessWidget {
                                   decoration: InputDecoration(
                                     border: InputBorder.none,
                                     hintText: 'Search...',
-                                    hintStyle: TextStyle(color: Colors.grey),
+                                    hintStyle: TextStyle(),
                                   ),
                                   style: TextStyle(fontSize: 18),
                                 ),
@@ -161,7 +167,7 @@ class homepage extends StatelessWidget {
                           children: [
                             Text('Browse categories',
                                 style: TextStyle(
-                                    color: Colors.black,
+
                                     fontSize: 23,
                                     fontWeight: FontWeight.bold)),
                             GestureDetector(
@@ -188,7 +194,7 @@ class homepage extends StatelessWidget {
                               },
                               child: Text(
                                 'See All',
-                                style: TextStyle(color: Colors.blueAccent, fontSize: 17),
+                                style: TextStyle( fontSize: 17),
                               ),
                             ),
 
@@ -404,7 +410,7 @@ class homepage extends StatelessWidget {
                           children: [
                             Text('Mobile Phones',
                                 style: TextStyle(
-                                    color: Colors.black,
+
                                     fontSize: 23,
                                     fontWeight: FontWeight.bold)),
                             GestureDetector(
@@ -431,7 +437,7 @@ class homepage extends StatelessWidget {
                               },
                               child: Text(
                                 'See All',
-                                style: TextStyle(color: Colors.blueAccent, fontSize: 17),
+                                style: TextStyle(fontSize: 17),
                               ),
                             ),
                           ],
@@ -484,7 +490,7 @@ class homepage extends StatelessWidget {
                                           ),
                                           Icon(
                                             Icons.favorite_border,
-                                            color: Colors.blue,
+
                                             size: 20,
                                           ),
                                         ],
@@ -512,7 +518,7 @@ class homepage extends StatelessWidget {
                           children: [
                             Text('Cars',
                                 style: TextStyle(
-                                    color: Colors.black,
+
                                     fontSize: 23,
                                     fontWeight: FontWeight.bold)),
                             GestureDetector(
@@ -539,7 +545,7 @@ class homepage extends StatelessWidget {
                               },
                               child: Text(
                                 'See All',
-                                style: TextStyle(color: Colors.blueAccent, fontSize: 17),
+                                style: TextStyle( fontSize: 17),
                               ),
                             ),
                           ],
@@ -592,7 +598,7 @@ class homepage extends StatelessWidget {
                                           ),
                                           Icon(
                                             Icons.favorite_border,
-                                            color: Colors.blue,
+
                                             size: 20,
                                           ),
                                         ],
@@ -613,46 +619,36 @@ class homepage extends StatelessWidget {
                         ),
                       ),
                       // jobs
-                      Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text('Jobs',
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 23,
-                                    fontWeight: FontWeight.bold)),
-                            GestureDetector(
-                              onTap: () {
-                                // Navigate to the new screen with a slide transition from the right
-                                Navigator.push(
-                                  context,
-                                  PageRouteBuilder(
-                                    pageBuilder: (context, animation, secondaryAnimation) => jobpage(),
-                                    transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                                      const begin = Offset(1.0, 0.0);
-                                      const end = Offset.zero;
-                                      const curve = Curves.ease;
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Jobs',
+                          style: TextStyle(
 
-                                      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-
-                                      return SlideTransition(
-                                        position: animation.drive(tween),
-                                        child: child,
-                                      );
-                                    },
-                                  ),
-                                );
-                              },
-                              child: Text(
-                                'See All',
-                                style: TextStyle(color: Colors.blueAccent, fontSize: 17),
-                              ),
-                            ),
-                          ],
+                            fontSize: 23,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
+                        GestureDetector(
+                          onTap: () {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return JobPagePopup(); // Show the popup dialog
+                              },
+                            );
+                          },
+                          child: Text(
+                            'See All',
+                            style: TextStyle( fontSize: 17),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                       Container(
                         height: 240,
                         child: ListView.builder(
@@ -700,7 +696,7 @@ class homepage extends StatelessWidget {
                                           ),
                                           Icon(
                                             Icons.favorite_border,
-                                            color: Colors.blue,
+
                                             size: 20,
                                           ),
                                         ],
