@@ -9,10 +9,7 @@ class chatpage extends StatefulWidget {
 
 class _ChatPageState extends State<chatpage> {
   int _currentIndex = 0;
-  // List<String> _allData=[];
-  // List<String> _buyingData = [ ];
-  // List<String> _sellingData = [ ];
-  // List<String> _data = [];
+
   final PageController _chatPageController = PageController();
 
   @override

@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(seconds: 1), // Reduce the duration to 1 second
+      duration: const Duration(seconds: 3), // Animation duration
       vsync: this,
     );
 
@@ -61,27 +61,45 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                   backgroundImage: AssetImage('assets/images/olximage.png'), // Path to your logo image
                   radius: 75,
                 ),
+                // Add a spinner on top of the image
+                Positioned(
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  child: Center(
+                    child: CircularProgressIndicator(
+                      valueColor: AlwaysStoppedAnimation(Colors.white),
+                    ),
+                  ),
+                ),
               ],
-            ), // Replace with your logo
-            SizedBox(height: 20),
+            ),
+            SizedBox(height: 10),
 
             // Animated loading indicator with dots
             AnimatedBuilder(
               animation: _animation,
               builder: (context, child) {
-                return Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(3, (index) {
-                    return Container(
-                      margin: EdgeInsets.symmetric(horizontal: 5),
-                      height: 12, // Increase the height of the dots
-                      width: 12, // Make the dots' size equal
-                      decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(_animation.value), // Animate the opacity of the dots
-                        borderRadius: BorderRadius.circular(6), // Increase the border radius to match the height
-                      ),
-                    );
-                  }),
+                return Container(
+                  width: 60, // Set the width of the container for the dots
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(3, (index) {
+                      return Opacity(
+                        opacity: _animation.value > 0.5 ? 1.0 : 0.0, // Animate the opacity of the dots
+                        child: Container(
+                          margin: EdgeInsets.symmetric(horizontal: 5),
+                          height: 8, // Increase the height of the dots
+                          width: 8, // Make the dots' size equal
+                          decoration: BoxDecoration(
+                            color: Colors.white, // Set the color of the dots
+                            borderRadius: BorderRadius.circular(6), // Increase the border radius to match the height
+                          ),
+                        ),
+                      );
+                    }),
+                  ),
                 );
               },
             ),

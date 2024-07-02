@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'islameapp',
-      initialRoute: _initialRoute(),
+      initialRoute: AppRoutes.splash,
       initialBinding: BindingsBuilder(() {
         Get.lazyPut(() => BottomNavigationPageController());
       }),
@@ -33,20 +33,7 @@ class MyApp extends StatelessWidget {
       ],
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
-
       themeMode: Get.find<ThemeController>().themeMode,
     );
-  }
-
-  String _initialRoute() {
-    final storage = GetStorage();
-    bool? hasLaunchedBefore = storage.read('hasLaunchedBefore');
-
-    if (hasLaunchedBefore == null || !hasLaunchedBefore) {
-      storage.write('hasLaunchedBefore', true);
-      return AppRoutes.splash;
-    } else {
-      return AppRoutes.HOME;
-    }
   }
 }
