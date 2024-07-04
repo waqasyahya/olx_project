@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../screens/SellPage.dart';
 import '../screens/home.dart';
 import '../screens/chats.dart';
 import '../screens/ads.dart';
 import '../screens/account.dart';
-import '../routes/route.dart';
+import '../Routes/Route.dart';
 import 'ThreeColorCircle.dart';
+
+
+import '../Routes/Route.dart';
 
 class BottomNavigationPageController extends GetxController {
   static BottomNavigationPageController get to => Get.find();
@@ -16,7 +18,7 @@ class BottomNavigationPageController extends GetxController {
 
   void changePage(int _index) {
     if (_index == 2) {
-      showSellPage();
+      // Implement showSellPage logic here
     } else {
       currentIndex.value = _index;
       if (_index == 0) {
@@ -31,14 +33,10 @@ class BottomNavigationPageController extends GetxController {
     }
   }
 
-  // void showSellPage() {
-  //   Get.toNamed(AppRoutes.sell);
-  // }
+// void showSellPage() {
+//   Get.toNamed(AppRoutes.sell);
+// }
 }
-
-
-
-
 
 class BottomNavigationPage extends StatelessWidget {
   @override
