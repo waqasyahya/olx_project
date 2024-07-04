@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:olx_project/screens/Setting.dart';
-import 'controller/theme_controller.dart';
-import 'routes/route.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'layouts/bottombar.dart';
 import 'layouts/splashscreen.dart';
+import 'screens/login.dart';
+import 'screens/Setting.dart';
+import 'Routes/Route.dart';
+import 'controller/theme_controller.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   await GetStorage.init();
   runApp(MyApp());
 }
@@ -21,13 +24,14 @@ class MyApp extends StatelessWidget {
 
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'islameapp',
+      title: 'Olx Pakistan',
       initialRoute: AppRoutes.splash,
       initialBinding: BindingsBuilder(() {
         Get.lazyPut(() => BottomNavigationPageController());
       }),
       getPages: [
         GetPage(name: AppRoutes.splash, page: () => SplashScreen()),
+        GetPage(name: AppRoutes.LOGIN, page: () => LoginPage()),
         GetPage(name: AppRoutes.HOME, page: () => BottomNavigationPage()),
         GetPage(name: '/theme', page: () => ThemeSelectionPage()),
       ],

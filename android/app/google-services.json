@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "164363037303",
+    "project_id": "olx-pakistan-507ee",
+    "storage_bucket": "olx-pakistan-507ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164363037303:android:04634dc4255d7b1b77b472",
+        "android_client_info": {
+          "package_name": "com.example.olx_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiFR8DGn7vDrvAsz3SI5q245qyomGDT6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

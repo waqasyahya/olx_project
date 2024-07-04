@@ -11,7 +11,9 @@ import '../screens/Home.dart';
 import '../screens/Jobs.dart';
 import '../screens/Moters.dart';
 import '../screens/Setting.dart';
+import '../screens/Sugnup.dart';
 import '../screens/chats.dart';
+import '../screens/login.dart';
 import '../screens/property.dart';
 
 
@@ -27,6 +29,8 @@ class AppRoutes {
   static const job = '/jobpage';
   static const theme = '/theme';
   static const Jobpopup = '/Jobpopup';
+  static const LOGIN = '/LOGIN';
+  static const SIGNUP = '/SIGNUP';
 
 
   static List<GetPage> routes = <GetPage>[
@@ -41,6 +45,8 @@ class AppRoutes {
     GetPage(name: Car, page: () => AnimatedExpandCollapseScreen()),
     GetPage(name: theme, page: () => ThemeSelectionPage()),
     GetPage(name: Jobpopup, page: () => JobPagePopup()),
+    GetPage(name: LOGIN, page: () => LoginPage()),
+    GetPage(name: SIGNUP, page: () => SignupPage()),
 
 
   ];

@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
         // Navigate to the next screen after the animation completes
         Future.delayed(Duration(seconds: 1)).then((_) {
           try {
-            Get.offAllNamed(AppRoutes.HOME);
+            Get.offAllNamed(AppRoutes.LOGIN);
           } catch (e) {
             print('Error navigating to home page: $e');
           }
