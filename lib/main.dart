@@ -9,6 +9,10 @@ import 'screens/Setting.dart';
 import 'Routes/Route.dart';
 import 'controller/theme_controller.dart';
 
+
+
+
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -18,7 +22,9 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   @override
+
   Widget build(BuildContext context) {
+
     // Initialize ThemeController before using it
     Get.put(ThemeController());
 
