@@ -13,11 +13,15 @@ import 'login.dart';
 class homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
+    var screenWidth = screenSize.width;
+    var screenHeight = screenSize.height;
     var length;
     return Scaffold(
       body: CustomScrollView(
         slivers: [
         SliverAppBar(
+
           backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
           elevation: Theme.of(context).appBarTheme.elevation,
         // backgroundColor: Colors.white,
@@ -27,6 +31,7 @@ class homepage extends StatelessWidget {
         pinned: false,
         leading: Image.asset('assets/images/olximage.png'), // logo on the left side
         title: Row(
+
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
