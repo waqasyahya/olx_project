@@ -21,8 +21,8 @@ class adspage extends StatelessWidget {
         stream: null,
         builder: (context, snapshot) {
           return Container(
-            width: screenWidth * 0.8, // 80% of screen width
-            height: screenHeight * 0.8, // 80% of screen height
+            width: screenWidth * 0.5, // 80% of screen width
+            height: screenHeight * 1, // 80% of screen height
             padding: EdgeInsets.all(8.0),
             child: Column(
               children: [

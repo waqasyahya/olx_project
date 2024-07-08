@@ -1,0 +1,261 @@
+[
+  {
+    "id": "1",
+    "Quaida_Name": "مفردات",
+    "Quaida_Words": "31-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "2",
+    "Quaida_Name": "مفرد حروف بلا ترتیب",
+    "Quaida_Words": "60-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "3",
+    "Quaida_Name": "مرکبات",
+    "Quaida_Words": "66-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "4",
+    "Quaida_Name": "زبر",
+    "Quaida_Words": "30-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "5",
+    "Quaida_Name": "حرکات - زبر مشق",
+    "Quaida_Words": "30-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "6",
+    "Quaida_Name": "تنوین -دو زبر",
+    "Quaida_Words": "29-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "7",
+    "Quaida_Name": "تنوین -دو زبر مشق",
+    "Quaida_Words": "25-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "8",
+    "Quaida_Name": "زیر",
+    "Quaida_Words": "30-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "9",
+    "Quaida_Name": "زیر کا بیان مشق",
+    "Quaida_Words": "25-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "10",
+    "Quaida_Name": "تنوین دو زیر",
+    "Quaida_Words": "29-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "11",
+    "Quaida_Name": "دو زیر کی تنوین مشق",
+    "Quaida_Words": "25-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "12",
+    "Quaida_Name": "پیش",
+    "Quaida_Words": "30-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "13",
+    "Quaida_Name": "پیش مشق",
+    "Quaida_Words": "25-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "14",
+    "Quaida_Name": "تنوین دو پیش",
+    "Quaida_Words": "28-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "15",
+    "Quaida_Name": "دو پیش کی تنوین مشق",
+    "Quaida_Words": "25-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "16",
+    "Quaida_Name": "سکون یا جزم",
+    "Quaida_Words": "78-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "17",
+    "Quaida_Name": "سکون یا جزم مشق",
+    "Quaida_Words": "38-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "18",
+    "Quaida_Name": "تشديد",
+    "Quaida_Words": "81-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "19",
+    "Quaida_Name": "تشديد مشق",
+    "Quaida_Words": "38-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "20",
+    "Quaida_Name": "حروف مدہ",
+    "Quaida_Words": "84-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "21",
+    "Quaida_Name": "حروف مدہ ا۔و۔ی مشق",
+    "Quaida_Words": "85-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "22",
+    "Quaida_Name": "حروف لین",
+    "Quaida_Words": "56-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "23",
+    "Quaida_Name": "حروف لین و۔ی مشق",
+    "Quaida_Words": "53-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "24",
+    "Quaida_Name": "کھڑی حرکات",
+    "Quaida_Words": "84-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "25",
+    "Quaida_Name": "کھڑا زبر - کھڑی زیر - الٹا پیش مشق",
+    "Quaida_Words": "66-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "26",
+    "Quaida_Name": "اظہار",
+    "Quaida_Words": "30-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "27",
+    "Quaida_Name": "ادغام",
+    "Quaida_Words": "24-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "28",
+    "Quaida_Name": "اقلاب",
+    "Quaida_Words": "28-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "29",
+    "Quaida_Name": "اخفاء",
+    "Quaida_Words": "66-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "30",
+    "Quaida_Name": "ادغام شفوي",
+    "Quaida_Words": "8-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "31",
+    "Quaida_Name": "اخفاء شفوي",
+    "Quaida_Words": "8-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "32",
+    "Quaida_Name": "نونِ قُطنى",
+    "Quaida_Words": "42-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "33",
+    "Quaida_Name": "لام کا بیان",
+    "Quaida_Words": "26-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "34",
+    "Quaida_Name": "مدات",
+    "Quaida_Words": "25-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "35",
+    "Quaida_Name": "حروف مُقَطَّعَات",
+    "Quaida_Words": "14-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "36",
+    "Quaida_Name": "مشکل کلمات",
+    "Quaida_Words": "24-Words",
+    "created_at": null,
+    "updated_at": null
+  },
+  {
+    "id": "37",
+    "Quaida_Name": "مشکل کلمات",
+    "Quaida_Words": "14-Words",
+    "created_at": null,
+    "updated_at": null
+  }
+]

@@ -1,44 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:flutter/services.dart' show rootBundle;
-import 'dart:convert';
 
 import '../controller/quaidacontroller.dart';
 
-class propertypage extends StatelessWidget {
-  final QuaidaController controller = Get.put(QuaidaController());
+class QuaidaDetailPage extends StatelessWidget {
+  final String quaidaId;
+  final QuaidaDetailController quaidaDetailController = Get.put(QuaidaDetailController());
+
+  QuaidaDetailPage({required this.quaidaId});
 
   @override
   Widget build(BuildContext context) {
+    quaidaDetailController.fetchQuaidaDetailsByQuaidaId(quaidaId);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Quaida Details'),
       ),
       body: Obx(() {
-        if (controller.quaidaDetails.isEmpty) {
-          return Center(
-            child: CircularProgressIndicator(),
-          );
+        if (quaidaDetailController.quaidaDetails.isEmpty) {
+          return Center(child: CircularProgressIndicator());
         } else {
           return ListView.builder(
-            itemCount: controller.quaidaDetails.length,
+            itemCount: quaidaDetailController.quaidaDetails.length,
             itemBuilder: (context, index) {
-              var detail = controller.quaidaDetails[index];
+              final detail = quaidaDetailController.quaidaDetails[index];
               return ListTile(
-                title: Text(detail.wordsArabic ?? ''),
-                subtitle: Text(detail.quaidaId ?? ''),
-                // Add more UI elements as per your requirement
+                title: Text(detail.wordsArabic),
+                subtitle: Text('Urdu: ${detail.wordsUrdu}\nAudio: ${detail.audio1}'),
               );
             },
           );
         }
       }),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          controller.fetchQuaidaDetails();
-        },
-        child: Icon(Icons.refresh),
-      ),
     );
   }
 }

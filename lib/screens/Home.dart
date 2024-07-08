@@ -8,6 +8,7 @@ import 'Ads.dart';
 import 'Cars.dart';
 import 'Moters.dart';
 import 'Jobs.dart';
+import 'Quaida.dart';
 import 'login.dart';
 
 class homepage extends StatelessWidget {
@@ -65,7 +66,7 @@ class homepage extends StatelessWidget {
                   padding: EdgeInsets.only(left: 20, right: 20),
                 ),
                 onPressed: () {
-                  Get.to(() => propertypage());
+                  // Get.to(() => propertypage());
                   print('Button pressed');
                 },
                 child: Icon(Icons.home_work), // icon inside the button
@@ -643,7 +644,7 @@ class homepage extends StatelessWidget {
                             showDialog(
                               context: context,
                               builder: (BuildContext context) {
-                                return LoginPage(); // Show the popup dialog
+                                return QuaidaListPage(); // Show the popup dialog
                               },
                             );
                           },

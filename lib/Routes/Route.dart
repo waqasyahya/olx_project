@@ -10,6 +10,7 @@ import '../screens/Cars.dart';
 import '../screens/Home.dart';
 import '../screens/Jobs.dart';
 import '../screens/Moters.dart';
+import '../screens/Quaida.dart';
 import '../screens/Setting.dart';
 import '../screens/Sugnup.dart';
 import '../screens/chats.dart';
@@ -31,6 +32,7 @@ class AppRoutes {
   static const Jobpopup = '/Jobpopup';
   static const LOGIN = '/LOGIN';
   static const SIGNUP = '/SIGNUP';
+  static const Quaida = '/Quaida';
 
 
   static List<GetPage> routes = <GetPage>[
@@ -39,7 +41,7 @@ class AppRoutes {
     GetPage(name: splash, page: () => SplashScreen()),
     GetPage(name: ads, page: () => adspage()),
     GetPage(name: chat, page: () => chatpage()),
-    GetPage(name: property, page: () => propertypage()),
+    // GetPage(name: property, page: () => propertypage()),
     GetPage(name: job, page: () => jobpage()),
     GetPage(name: moters, page: () => Moterpage()),
     GetPage(name: Car, page: () => AnimatedExpandCollapseScreen()),
@@ -47,6 +49,7 @@ class AppRoutes {
     GetPage(name: Jobpopup, page: () => JobPagePopup()),
     GetPage(name: LOGIN, page: () => LoginPage()),
     GetPage(name: SIGNUP, page: () => SignupPage()),
+    GetPage(name: Quaida, page: () => QuaidaListPage()),
 
 
   ];

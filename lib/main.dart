@@ -2,25 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_core_web/firebase_core_web.dart'; // Add this line
-
 import 'layouts/bottombar.dart';
 import 'layouts/splashscreen.dart';
 import 'screens/login.dart';
 import 'screens/Setting.dart';
 import 'Routes/Route.dart';
 import 'controller/theme_controller.dart';
+import 'package:flutter/foundation.dart' show kIsWeb; // Import kIsWeb for web detection
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: const FirebaseOptions(
-      apiKey: 'AIzaSyCiFR8DGn7vDrvAsz3SI5q245qyomGDT6I',
-      appId: 'olx-pakistan-507ee',
-      messagingSenderId: '164363037303',
-      projectId: 'olx-pakistan-507ee',
-    ),
-  );
+
+  if (kIsWeb) {
+    await Firebase.initializeApp(
+      options: const FirebaseOptions(
+        apiKey: 'AIzaSyCiFR8DGn7vDrvAsz3SI5q245qyomGDT6I',
+        appId: '1:164363037303:web:123456abcdefg',
+        messagingSenderId: '164363037303',
+        projectId: 'olx-pakistan-507ee',
+      ),
+    );
+  } else {
+    await Firebase.initializeApp();
+  }
 
   await GetStorage.init();
   runApp(MyApp());
