@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:olx_project/screens/property.dart';
 import '../controller/QuaidaContoller1.dart';
 
-
 class QuaidaListPage extends StatelessWidget {
   final QuaidaController1 quaidaController = Get.put(QuaidaController1());
 
@@ -56,6 +55,7 @@ class QuaidaListPage extends StatelessWidget {
           );
         }
       }),
+      backgroundColor: Colors.black, // Set background color explicitly
     );
   }
 }

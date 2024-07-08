@@ -154,7 +154,7 @@ class accountpage extends StatelessWidget {
                         subtitle: Text('Theme will be change ', style: TextStyle(fontSize: 16),), // secondary text below main text
                         trailing: Padding(
                           padding: const EdgeInsets.only(bottom: 8.0),
-                          child: Icon(Icons.arrow_forward_ios, size: 24, color: AppColors.onSecondary,), // right side icon
+                          child: Icon(Icons.arrow_forward_ios, size: 24,), // right side icon
                         ), // right side icon
                         onTap: () {
                           Navigator.push(

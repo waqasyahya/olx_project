@@ -114,7 +114,7 @@ class _ChatPageState extends State<chatpage> {
                 ),
               ),
               Container(
-                height: 300,
+                height: MediaQuery.of(context).size.height, // Set the height to the screen height
                 child: PageView(
                   controller: _chatPageController,
                   physics: AlwaysScrollableScrollPhysics(),
@@ -134,183 +134,27 @@ class _ChatPageState extends State<chatpage> {
                     SingleChildScrollView(
                       child: Column(
                         children: [
-                          ListView.builder(
-                            shrinkWrap: true,
-                            physics: NeverScrollableScrollPhysics(),
-                            itemCount: allData.length,
-                            itemBuilder: (context, index) {
-                              return Center(
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    if (allData[index].isImage)
-                                      Image.asset(
-                                        height: 120,
-                                        allData[index].imageUrl,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(7),
-                                      child: Text(
-                                        allData[index].text,
-                                        style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.w500),
-                                      ),
-                                    ),
-                                    const Padding(
-                                      padding: EdgeInsets.all(2),
-                                      child: Text(
-                                        'Find something you like and start a conversation!',
-                                        style: TextStyle(color: Colors.black),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(6),
-                                      child: SizedBox(
-                                        width: double.infinity, // Set the width to maximum available space
-                                        child: OutlinedButton(
-                                          onPressed: () {
-                                            // Define what happens when the button is pressed
-                                            print('Button Pressed');
-                                          },
-                                          style: OutlinedButton.styleFrom(
-                                            backgroundColor: Colors.blueGrey,
-                                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-                                            minimumSize: Size(double.infinity, 1), // Set the minimum size
-                                          ),
-                                          child: Text('Explore the latest Ads', style: TextStyle(color: Colors.white, fontSize: 24),),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              );
-                            },
-                          ),
-                        ],
-                      ),
-                    ),
-
-
-
-                    SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          ListView.builder(
-                            shrinkWrap: true,
-                            physics: NeverScrollableScrollPhysics(),
-                            itemCount: buyingData.length,
-                            itemBuilder: (context, index) {
-                              return Center(
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    if (buyingData[index].isImage)
-                                      Image.asset(
-                                        height: 120,
-                                        buyingData[index].imageUrl,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(7),
-                                      child: Text(
-                                        buyingData[index].text,
-                                        style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.w500),
-                                      ),
-                                    ),
-                                    const Padding(
-                                      padding: EdgeInsets.all(2),
-                                      child: Text(
-                                        'Find something you like and start a conversation!',
-                                        style: TextStyle(color: Colors.black),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(6),
-                                      child: SizedBox(
-                                        width: double.infinity, // Set the width to maximum available space
-                                        child: OutlinedButton(
-                                          onPressed: () {
-                                            // Define what happens when the button is pressed
-                                            print('Button Pressed');
-                                          },
-                                          style: OutlinedButton.styleFrom(
-                                            backgroundColor: Colors.blueGrey,
-                                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-                                            minimumSize: Size(double.infinity, 1), // Set the minimum size
-                                          ),
-                                          child: Text('Explore the latest Ads', style: TextStyle(color: Colors.white, fontSize: 24),),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              );
-                            },
-                          ),
+                          // Your list view builders here
                         ],
                       ),
                     ),
                     SingleChildScrollView(
                       child: Column(
                         children: [
-                          ListView.builder(
-                            shrinkWrap: true,
-                            physics: NeverScrollableScrollPhysics(),
-                            itemCount: sellingData.length,
-                            itemBuilder: (context, index) {
-                              return Center(
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    if (sellingData[index].isImage)
-                                      Image.asset(
-                                        height: 120,
-                                        sellingData[index].imageUrl,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(7),
-                                      child: Text(
-                                        sellingData[index].text,
-                                        style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.w500),
-                                      ),
-                                    ),
-                                    const Padding(
-                                      padding: EdgeInsets.all(2),
-                                      child: Text(
-                                        'We have keep messages for any items you are selling in here',
-                                        style: TextStyle(color: Colors.black),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(6),
-                                      child: SizedBox(
-                                        width: double.infinity, // Set the width to maximum available space
-                                        child: OutlinedButton(
-                                          onPressed: () {
-                                            // Define what happens when the button is pressed
-                                            print('Button Pressed');
-                                          },
-                                          style: OutlinedButton.styleFrom(
-                                            backgroundColor: Colors.blueGrey,
-                                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-                                            minimumSize: Size(double.infinity, 1), // Set the minimum size
-                                          ),
-                                          child: Text('Start selling', style: TextStyle(color: Colors.white, fontSize: 24),),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              );
-                            },
-                          ),
+                          Center(child: Text('waqas')),
+                        ],
+                      ),
+                    ),
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          // Your list view builders here
                         ],
                       ),
                     ),
                   ],
                 ),
-              ),
+              )
             ]),
           )
         ],

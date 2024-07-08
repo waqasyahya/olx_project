@@ -9,6 +9,7 @@ import 'Cars.dart';
 import 'Moters.dart';
 import 'Jobs.dart';
 import 'Quaida.dart';
+import 'Slider.dart';
 import 'login.dart';
 
 class homepage extends StatelessWidget {
@@ -66,7 +67,7 @@ class homepage extends StatelessWidget {
                   padding: EdgeInsets.only(left: 20, right: 20),
                 ),
                 onPressed: () {
-                  // Get.to(() => propertypage());
+                  Get.to(() => AutoSlider());
                   print('Button pressed');
                 },
                 child: Icon(Icons.home_work), // icon inside the button
