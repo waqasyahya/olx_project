@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-
 import 'dart:math'; // Add this line
-
-
+import 'package:flutter/material.dart';
 
 class ThreeColorCirclePainter extends CustomPainter {
   @override
@@ -54,7 +51,7 @@ class ThreeColorCirclePainter extends CustomPainter {
     );
 
     // Plus sign
-    paint.color = Colors.black;
+    // paint.color = Colors.black;
     paint.strokeWidth = 2;
     canvas.drawLine(
       Offset(size.width / 2 - 10, size.height / 2),
@@ -67,6 +64,7 @@ class ThreeColorCirclePainter extends CustomPainter {
       paint,
     );
   }
+
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }

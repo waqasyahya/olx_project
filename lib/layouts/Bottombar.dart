@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../screens/SellPage.dart';
 import '../screens/home.dart';
 import '../screens/chats.dart';
 import '../screens/ads.dart';
 import '../screens/account.dart';
 import '../Routes/Route.dart';
 import 'ThreeColorCircle.dart';
-
-
-import '../Routes/Route.dart';
-
 class BottomNavigationPageController extends GetxController {
   static BottomNavigationPageController get to => Get.find();
 
@@ -18,7 +15,7 @@ class BottomNavigationPageController extends GetxController {
 
   void changePage(int _index) {
     if (_index == 2) {
-      // Implement showSellPage logic here
+      showSellPage();
     } else {
       currentIndex.value = _index;
       if (_index == 0) {

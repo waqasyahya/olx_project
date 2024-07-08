@@ -19,23 +19,27 @@ void showSellPage() {
           Container(
             height: kToolbarHeight,
             child: AppBar(
-              backgroundColor: Colors.white,
+              // backgroundColor: Colors.white,
               elevation: 0,
               automaticallyImplyLeading: false, // Remove the default back button
               leading: Padding(
-                padding: const EdgeInsets.only(left: 30),
-                child: IconButton(
-                  icon: Icon(Icons.close, color: Colors.black, size: 25),
-                  onPressed: () {
-                    Get.back(); // Close the bottom sheet
-                  },
+                padding: const EdgeInsets.only(left: 20),
+                child: Container(
+                  width: 100,
+                  height: 100,
+                  child: IconButton(
+                    icon: Icon(Icons.close,  size: 25),
+                    onPressed: () {
+                      Get.back(); // Close the bottom sheet
+                    },
+                  ),
                 ),
               ),
               title: Text('What are you offering?'),
               bottom: PreferredSize(
                 preferredSize: Size.fromHeight(1.0), // Line height
                 child: Container(
-                  color: Colors.black, // Line color
+                  // color: Colors.black, // Line color
                   height: 1.0, // Line thickness
                 ),
               ),
@@ -105,7 +109,7 @@ void showSellPage() {
       ),
     ),
     isScrollControlled: true,
-    backgroundColor: Colors.white, // Make the background transparent
-    barrierColor: Colors.white.withOpacity(0.3), // Set the shadow color to white with opacity
+    // backgroundColor: Colors.white, // Make the background transparent
+    // barrierColor: Colors.white.withOpacity(0.3), // Set the shadow color to white with opacity
   );
 }
